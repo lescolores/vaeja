@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Château — Domaine Extérieur · Væja</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;background:#07101a;overflow:hidden;display:flex;flex-direction:column;}
+.nav{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;
+  background:linear-gradient(180deg,#0c1828,#07101a);border-bottom:1px solid #1a3050;flex-wrap:wrap;}
+.nav-title{font-family:'Cinzel',serif;font-size:1rem;color:#c8a040;letter-spacing:.12em;margin-right:14px;
+  white-space:nowrap;text-shadow:0 0 16px rgba(200,160,64,.3);}
+.tab{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.06em;padding:6px 14px;
+  border:1px solid #2a4060;background:#0a1828;color:#7090b0;cursor:pointer;transition:all .2s;
+  border-radius:2px;white-space:nowrap;text-decoration:none;display:inline-block;}
+.tab:hover{background:#142038;color:#e0c060;border-color:#c8a040;}
+.tab.active{background:linear-gradient(135deg,#1a3a6a,#0e2448);color:#e0c060;
+  border-color:#c8a040;box-shadow:0 0 10px rgba(200,160,64,.2);}
+.plan{flex:1 1 0;min-height:0;display:flex;}
+.plan svg{width:100%;height:100%;display:block;}
+.legend{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:6px 16px;background:#050d18;border-top:1px solid #1a3050;flex-wrap:wrap;}
+.li{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.ll{font-family:'Cinzel',serif;font-size:.78rem;color:#6080a0;letter-spacing:.04em;}
+.sep{width:1px;height:20px;background:#1a3050;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-title">⚜ Château des Hautes Lumières</span>
+  <a class="tab" href="SS.html">⛓ Sous-Sol</a>
+  <a class="tab" href="index.html">Rez-de-Chaussée</a>
+  <a class="tab" href="E1.html">1er Étage</a>
+  <a class="tab" href="E2.html">2e Étage — Royale</a>
+  <a class="tab" href="E3.html">3e Étage — Invités</a>
+  <a class="tab active" href="cour_exterieure.html">🌿 Domaine Extérieur</a>
+</nav>
+
+<div class="plan">
+<svg viewBox="0 0 3600 2200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- Herbe verte foncée (fond général) -->
+  <pattern id="herbe" width="18" height="18" patternUnits="userSpaceOnUse">
+    <rect width="18" height="18" fill="#071a0c"/>
+    <rect x="0" y="0" width="9" height="9" fill="#081e0e" opacity=".6"/>
+    <rect x="9" y="9" width="9" height="9" fill="#061608" opacity=".5"/>
+  </pattern>
+  <!-- Eau -->
+  <pattern id="eau" width="48" height="20" patternUnits="userSpaceOnUse">
+    <rect width="48" height="20" fill="#071828"/>
+    <path d="M0,8 Q12,4 24,8 Q36,12 48,8" stroke="#1a4a70" stroke-width="1.5" fill="none" opacity=".7"/>
+    <path d="M0,15 Q12,11 24,15 Q36,19 48,15" stroke="#132a50" stroke-width="1" fill="none" opacity=".4"/>
+  </pattern>
+  <!-- Dalle (place, chemin principal) -->
+  <pattern id="dalle" width="28" height="28" patternUnits="userSpaceOnUse">
+    <rect width="28" height="28" fill="#0e1a20"/>
+    <rect x="1" y="1" width="12" height="12" fill="#111e28" opacity=".5"/>
+    <rect x="15" y="15" width="12" height="12" fill="#0c1820" opacity=".5"/>
+  </pattern>
+  <!-- Dalle argentée (pont) -->
+  <pattern id="pont-arg" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect width="20" height="20" fill="#18243a"/>
+    <rect x="2" y="2" width="16" height="16" fill="#1e2e48" opacity=".7"/>
+    <line x1="10" y1="2" x2="10" y2="18" stroke="#8090b0" stroke-width=".5" opacity=".3"/>
+    <line x1="2" y1="10" x2="18" y2="10" stroke="#8090b0" stroke-width=".5" opacity=".3"/>
+  </pattern>
+  <!-- Pierre rempart argentée -->
+  <pattern id="rempart" width="32" height="20" patternUnits="userSpaceOnUse">
+    <rect width="32" height="20" fill="#182030"/>
+    <rect x="1" y="1" width="30" height="18" fill="#1e2840" opacity=".8"/>
+    <text x="16" y="14" text-anchor="middle" font-size="7" fill="#5070a0" opacity=".35">ᚱ</text>
+  </pattern>
+  <!-- Jardin fleuri -->
+  <pattern id="jardin" width="22" height="22" patternUnits="userSpaceOnUse">
+    <rect width="22" height="22" fill="#081a0a"/>
+    <circle cx="5" cy="5" r="1.5" fill="#3a1040" opacity=".7"/>
+    <circle cx="15" cy="11" r="1.5" fill="#2a3810" opacity=".7"/>
+    <circle cx="7" cy="17" r="1.2" fill="#401810" opacity=".6"/>
+    <circle cx="18" cy="3" r="1.2" fill="#183010" opacity=".6"/>
+    <circle cx="12" cy="15" r="1" fill="#302818" opacity=".5"/>
+  </pattern>
+  <!-- Filtre lumière bleue -->
+  <filter id="glow-bleu" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="5" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glow-argent" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glow-arbre" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="14" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glow-magique" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <!-- Gradient eau lac -->
+  <radialGradient id="grad-lac" cx="40%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#0c2840"/>
+    <stop offset="70%" stop-color="#071828"/>
+    <stop offset="100%" stop-color="#040e18"/>
+  </radialGradient>
+  <!-- Gradient arbre -->
+  <radialGradient id="grad-arbre" cx="50%" cy="45%" r="55%">
+    <stop offset="0%" stop-color="#60a8e0"/>
+    <stop offset="50%" stop-color="#2868b0"/>
+    <stop offset="100%" stop-color="#0c3060"/>
+  </radialGradient>
+</defs>
+
+<!-- ══════════════════════════════════
+     FOND GÉNÉRAL — herbe verte
+════════════════════════════════════ -->
+<rect width="3600" height="2200" fill="url(#herbe)"/>
+
+<!-- ══════════════════════════════════
+     LAC OUEST + MINI-ÎLES
+     (lac principal + extension nord avec îles)
+════════════════════════════════════ -->
+<!-- Corps du lac principal -->
+<ellipse cx="420" cy="1260" rx="370" ry="500"
+  fill="url(#grad-lac)" stroke="#1a4060" stroke-width="2" opacity=".95"
+  data-tip="Lac de Væja — s'écoule vers l'est sous le pont sinueux · eaux profondes"/>
+<!-- Reflets lumineux eau -->
+<ellipse cx="320" cy="1120" rx="90" ry="30" fill="#204870" opacity=".25" transform="rotate(-15,320,1120)"/>
+<ellipse cx="500" cy="1380" rx="70" ry="22" fill="#1a3860" opacity=".2"/>
+<!-- Extension nord-ouest lac vers mini-îles -->
+<ellipse cx="250" cy="700" rx="200" ry="300"
+  fill="url(#grad-lac)" stroke="#1a4060" stroke-width="1.5" opacity=".85"/>
+<ellipse cx="130" cy="400" rx="110" ry="180"
+  fill="url(#grad-lac)" stroke="#1a4060" stroke-width="1.5" opacity=".75"/>
+<!-- Couloir eau reliant les deux parties -->
+<path d="M340,780 Q300,850 280,1000 Q265,1100 300,1200"
+  stroke="#071828" stroke-width="60" fill="none" opacity=".8"/>
+
+<!-- Mini-île 1 (grande) -->
+<ellipse cx="175" cy="720" rx="75" ry="110"
+  fill="#0a1c0e" stroke="#1a3020" stroke-width="2"
+  data-tip="Mini-île — arbres centenaires, vue panoramique sur le lac"/>
+<!-- Arbre île 1 -->
+<circle cx="168" cy="690" r="32" fill="#0c2612" stroke="#1a3818" stroke-width="1.5" opacity=".9"/>
+<circle cx="185" cy="710" r="22" fill="#0a2010" opacity=".8"/>
+<circle cx="155" cy="715" r="18" fill="#0b2210" opacity=".75"/>
+
+<!-- Mini-île 2 (petite) -->
+<ellipse cx="105" cy="400" rx="52" ry="70"
+  fill="#0a1c0e" stroke="#1a3020" stroke-width="1.5"
+  data-tip="Petite île — zone intime, vue sur le château"/>
+<circle cx="100" cy="380" r="22" fill="#0c2612" stroke="#1a3818" stroke-width="1.5" opacity=".85"/>
+<circle cx="115" cy="400" r="16" fill="#0a2010" opacity=".75"/>
+
+<!-- Zone relaxation (fond extrême ouest) -->
+<rect x="20" y="280" width="240" height="200" rx="6"
+  fill="#091808" stroke="#1a4030" stroke-width="1.5" stroke-dasharray="6,4"
+  data-tip="Zone de Relaxation — pergola, bancs, vue sur les mini-îles et le lac paisible"/>
+<text x="140" y="364" text-anchor="middle" font-family="Cinzel,serif" font-size="14" fill="#1a4a28">ZONE DE</text>
+<text x="140" y="384" text-anchor="middle" font-family="Cinzel,serif" font-size="14" fill="#1a4a28">RELAXATION</text>
+<!-- Bancs zone relaxation -->
+<rect x="60" y="420" width="36" height="10" rx="3" fill="#121c0e" stroke="#2a4020" stroke-width="1.5"/>
+<rect x="148" y="408" width="36" height="10" rx="3" fill="#121c0e" stroke="#2a4020" stroke-width="1.5"/>
+
+<!-- PONT sinueux vers zone relaxation (dalle argentée) -->
+<path d="M570,1180 Q500,1100 440,980 Q380,860 340,760 Q300,660 240,580 Q190,510 165,450"
+  stroke="#8090b8" stroke-width="16" fill="none" opacity=".65"
+  data-tip="Pont sinueux — dalles argentées, sinueux pour préserver la flore, enjambe le lac"/>
+<path d="M570,1180 Q500,1100 440,980 Q380,860 340,760 Q300,660 240,580 Q190,510 165,450"
+  stroke="#c0d0e8" stroke-width="5" fill="none" opacity=".3"/>
+<!-- Label pont -->
+<text x="330" y="830" text-anchor="middle" font-family="Cinzel,serif" font-size="12"
+  font-style="italic" fill="#6080a0" transform="rotate(-55,330,830)">Pont sinueux · argent</text>
+
+<!-- Cours d'eau reliant lac → est de Væja (sous le pont) -->
+<path d="M760,1300 Q900,1280 1060,1260 Q1160,1245 1240,1240"
+  stroke="#071828" stroke-width="32" fill="none" opacity=".8"/>
+<path d="M760,1300 Q900,1280 1060,1260 Q1160,1245 1240,1240"
+  stroke="#1a4060" stroke-width="14" fill="none" opacity=".4"/>
+<text x="950" y="1240" text-anchor="middle" font-family="Cinzel,serif" font-size="12"
+  font-style="italic" fill="#1a3a58">← vers flanc Est de Væja</text>
+
+<!-- Label lac -->
+<text x="420" y="1295" text-anchor="middle" font-family="Cinzel,serif" font-size="18"
+  font-style="italic" fill="#1a4060">Lac de Væja</text>
+
+<!-- ══════════════════════════════════
+     REMPARTS (rectangle, pierre argentée + runes)
+     x=800→3020  y=260→1980
+════════════════════════════════════ -->
+<!-- Mur Nord -->
+<rect x="800" y="260" width="2220" height="55"
+  fill="url(#rempart)" stroke="#9090b8" stroke-width="2.5"/>
+<!-- Runes mur nord -->
+<text x="1400" y="296" font-family="Cinzel,serif" font-size="11" fill="#5060a0" opacity=".6">
+  ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ
+</text>
+<!-- Mur Sud -->
+<rect x="800" y="1925" width="2220" height="55"
+  fill="url(#rempart)" stroke="#9090b8" stroke-width="2.5"/>
+<text x="1400" y="1960" font-family="Cinzel,serif" font-size="11" fill="#5060a0" opacity=".6">
+  ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ
+</text>
+<!-- Mur Ouest -->
+<rect x="800" y="260" width="55" height="1720"
+  fill="url(#rempart)" stroke="#9090b8" stroke-width="2.5"/>
+<!-- Mur Est -->
+<rect x="2965" y="260" width="55" height="1720"
+  fill="url(#rempart)" stroke="#9090b8" stroke-width="2.5"/>
+<!-- Créneaux mur nord -->
+<g fill="#182030" stroke="#9090b8" stroke-width="1.2">
+  <rect x="840" y="232" width="24" height="32"/>  <rect x="896" y="232" width="24" height="32"/>
+  <rect x="960" y="232" width="24" height="32"/>  <rect x="1060" y="232" width="24" height="32"/>
+  <rect x="1200" y="232" width="24" height="32"/>  <rect x="1400" y="232" width="24" height="32"/>
+  <rect x="1600" y="232" width="24" height="32"/>  <rect x="1800" y="232" width="24" height="32"/>
+  <rect x="2000" y="232" width="24" height="32"/>  <rect x="2200" y="232" width="24" height="32"/>
+  <rect x="2400" y="232" width="24" height="32"/>  <rect x="2600" y="232" width="24" height="32"/>
+  <rect x="2800" y="232" width="24" height="32"/>  <rect x="2920" y="232" width="24" height="32"/>
+</g>
+<!-- Tours d'angle des remparts -->
+<!-- Tour NO rempart -->
+<circle cx="830" cy="288" r="42" fill="#182030" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="830" cy="288" r="28" fill="#101820" stroke="#6070a0" stroke-width="1.5"/>
+<text x="830" y="294" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#4060a0">Tour NO</text>
+<!-- Tour NE rempart -->
+<circle cx="2990" cy="288" r="42" fill="#182030" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="2990" cy="288" r="28" fill="#101820" stroke="#6070a0" stroke-width="1.5"/>
+<text x="2990" y="294" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#4060a0">Tour NE</text>
+<!-- Tour SO rempart -->
+<circle cx="830" cy="1953" r="42" fill="#182030" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="830" cy="1953" r="28" fill="#101820" stroke="#6070a0" stroke-width="1.5"/>
+<text x="830" y="1959" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#4060a0">Tour SO</text>
+<!-- Tour SE rempart -->
+<circle cx="2990" cy="1953" r="42" fill="#182030" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="2990" cy="1953" r="28" fill="#101820" stroke="#6070a0" stroke-width="1.5"/>
+<text x="2990" y="1959" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#4060a0">Tour SE</text>
+
+<!-- ══════════════════════════════════
+     PORTE DU REMPART (sud, centre)
+     x=1760→2060  y=1925→1980
+════════════════════════════════════ -->
+<!-- Ouverture dans le mur sud -->
+<rect x="1760" y="1925" width="300" height="55" fill="#071a0c"/>
+<!-- Encadrement porte argent -->
+<rect x="1758" y="1920" width="304" height="62"
+  fill="none" stroke="#b0c0d8" stroke-width="4"/>
+<!-- Vantail gauche -->
+<rect x="1764" y="1927" width="142" height="50"
+  fill="#141e2e" stroke="#9090b8" stroke-width="2" rx="1"/>
+<text x="1835" y="1956" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#6070a0" opacity=".8">ᚠ ᚱ ᛗ ᚲ</text>
+<!-- Vantail droit -->
+<rect x="1912" y="1927" width="142" height="50"
+  fill="#141e2e" stroke="#9090b8" stroke-width="2" rx="1"/>
+<text x="1983" y="1956" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#6070a0" opacity=".8">ᚾ ᛁ ᚷ ᚹ</text>
+<!-- Blason Rúnkonur (pierre bleue centre porte) -->
+<circle cx="1910" cy="1952" r="18"
+  fill="#0a1428" stroke="#9090b8" stroke-width="2" filter="url(#glow-bleu)"
+  data-tip="Blason des Rúnkonur — pierre précieuse bleue enchantée, symbole du clan royal"/>
+<circle cx="1910" cy="1952" r="12" fill="#0050b0" opacity=".85" filter="url(#glow-bleu)"/>
+<circle cx="1910" cy="1952" r="7" fill="#3090f0" opacity=".9"/>
+<circle cx="1907" cy="1949" r="3" fill="#90c8ff" opacity=".7"/>
+<!-- Label porte rempart -->
+<text x="1910" y="2002" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#8090b8">PORTE DU REMPART</text>
+<text x="1910" y="2018" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#5060a0">Argent gravé · Blason des Rúnkonur</text>
+
+<!-- ══════════════════════════════════
+     STATUES DE CHAQUE CÔTÉ DE LA PORTE
+     Gauche : Óðinn   Droite : Freyja
+════════════════════════════════════ -->
+<!-- BASE COMMUNES statues -->
+<!-- Socle Óðinn (gauche) -->
+<rect x="1680" y="1924" width="64" height="56" fill="#182030" stroke="#8090b0" stroke-width="2" rx="1"
+  data-tip="Statue d'Óðinn — droit, bandeau œil droit, paume gauche ouverte (accueil), main droite tenant Gungnir (combat)"/>
+<rect x="1688" y="1916" width="48" height="12" fill="#1e2840" stroke="#8090b0" stroke-width="1.5" rx="1"/>
+<!-- Corps Óðinn -->
+<rect x="1700" y="1848" width="22" height="68" rx="4" fill="#1c2a3e" stroke="#7080a8" stroke-width="1.5"/>
+<!-- Tête -->
+<circle cx="1711" cy="1841" r="13" fill="#182436" stroke="#7080a8" stroke-width="1.5"/>
+<!-- Bandeau œil droit -->
+<line x1="1706" y1="1839" x2="1718" y2="1836" stroke="#5060a0" stroke-width="3"/>
+<!-- Bras gauche — paume ouverte inclinée vers le bas (accueil) -->
+<line x1="1700" y1="1872" x2="1676" y2="1862" stroke="#7080a8" stroke-width="4.5" stroke-linecap="round"/>
+<ellipse cx="1671" cy="1859" rx="7" ry="5" fill="#1c2a3e" stroke="#7080a8" stroke-width="1.5" transform="rotate(-15,1671,1859)"/>
+<!-- Doigts ouverts paume -->
+<line x1="1665" y1="1854" x2="1661" y2="1850" stroke="#7080a8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1668" y1="1852" x2="1665" y2="1847" stroke="#7080a8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1671" y1="1851" x2="1669" y2="1845" stroke="#7080a8" stroke-width="2" stroke-linecap="round"/>
+<!-- Bras droit — lance Gungnir -->
+<line x1="1722" y1="1869" x2="1744" y2="1848" stroke="#7080a8" stroke-width="4.5" stroke-linecap="round"/>
+<!-- Hampe lance -->
+<line x1="1744" y1="1848" x2="1758" y2="1810" stroke="#9090b0" stroke-width="2.5"/>
+<!-- Pointe lance -->
+<polygon points="1756,1808 1761,1796 1766,1808" fill="#b0c0d0"/>
+<!-- Cape Óðinn -->
+<path d="M1700,1876 Q1691,1900 1694,1916" stroke="#4060a0" stroke-width="3" fill="none"/>
+<!-- Label -->
+<text x="1712" y="1910" text-anchor="middle" font-family="Cinzel,serif" font-size="12" font-weight="600" fill="#7080a8">Óðinn</text>
+
+<!-- Socle Freyja (droite) -->
+<rect x="2076" y="1924" width="64" height="56" fill="#182030" stroke="#8090b0" stroke-width="2" rx="1"
+  data-tip="Statue de Freyja — tête haute, Brisingamen, manteau de faucon, main droite sur le cœur (empathie), main gauche tenant une épée pointée vers le bas (protection)"/>
+<rect x="2084" y="1916" width="48" height="12" fill="#1e2840" stroke="#8090b0" stroke-width="1.5" rx="1"/>
+<!-- Corps Freyja -->
+<rect x="2096" y="1848" width="22" height="68" rx="4" fill="#1c2a3e" stroke="#7080a8" stroke-width="1.5"/>
+<!-- Tête haute -->
+<circle cx="2107" cy="1840" r="13" fill="#182436" stroke="#7080a8" stroke-width="1.5"/>
+<!-- Brisingamen (collier doré) -->
+<path d="M2096,1866 Q2107,1874 2118,1866" stroke="#c8a040" stroke-width="2.5" fill="none"/>
+<circle cx="2107" cy="1871" r="3" fill="#c8a040" filter="url(#glow-argent)" opacity=".9"/>
+<!-- Manteau plumes faucon (lignes sur les côtés) -->
+<path d="M2096,1872 Q2085,1890 2087,1916" stroke="#3a5020" stroke-width="3.5" fill="none"/>
+<path d="M2118,1872 Q2129,1890 2127,1916" stroke="#3a5020" stroke-width="3.5" fill="none"/>
+<!-- petites plumes -->
+<line x1="2088" y1="1880" x2="2082" y2="1876" stroke="#3a5020" stroke-width="1.5"/>
+<line x1="2087" y1="1892" x2="2080" y2="1888" stroke="#3a5020" stroke-width="1.5"/>
+<line x1="2126" y1="1880" x2="2132" y2="1876" stroke="#3a5020" stroke-width="1.5"/>
+<line x1="2127" y1="1892" x2="2133" y2="1888" stroke="#3a5020" stroke-width="1.5"/>
+<!-- Main droite sur cœur -->
+<line x1="2118" y1="1872" x2="2132" y2="1881" stroke="#7080a8" stroke-width="4.5" stroke-linecap="round"/>
+<ellipse cx="2137" cy="1884" rx="6" ry="5" fill="#1c2a3e" stroke="#7080a8" stroke-width="1.5" transform="rotate(20,2137,1884)"/>
+<text x="2134" y="1887" text-anchor="middle" font-family="serif" font-size="9" fill="#c8a040" opacity=".9">♥</text>
+<!-- Main gauche — épée pointée vers le bas -->
+<line x1="2096" y1="1872" x2="2078" y2="1884" stroke="#7080a8" stroke-width="4.5" stroke-linecap="round"/>
+<!-- Épée -->
+<line x1="2074" y1="1888" x2="2068" y2="1924" stroke="#b0c0d0" stroke-width="4"/>
+<!-- Garde -->
+<rect x="2060" y="1886" width="22" height="5" rx="2" fill="#8090b0"/>
+<!-- Pointe -->
+<polygon points="2066,1926 2070,1938 2074,1926" fill="#9090b0"/>
+<!-- Label -->
+<text x="2107" y="1910" text-anchor="middle" font-family="Cinzel,serif" font-size="12" font-weight="600" fill="#7080a8">Freyja</text>
+
+<!-- ══════════════════════════════════
+     GRANDE PLACE (dalle grise, fontaine)
+     Depuis la porte, avant les chemins
+════════════════════════════════════ -->
+<rect x="1640" y="1680" width="540" height="245"
+  fill="url(#dalle)" stroke="#1e2840" stroke-width="1.5" rx="2"
+  data-tip="Grande Place — dalles grises, fontaine centrale, carrefour des trois chemins du domaine"/>
+<!-- Fontaine centrale -->
+<circle cx="1910" cy="1795" r="55"
+  fill="#071828" stroke="#8090b0" stroke-width="2.5"
+  data-tip="Grande Fontaine — eau enchantée, reflets argentés et bleutés"/>
+<circle cx="1910" cy="1795" r="38" fill="#071020" stroke="#4060a0" stroke-width="1.5"/>
+<circle cx="1910" cy="1795" r="14" fill="#1050b0" opacity=".75" filter="url(#glow-bleu)"/>
+<!-- Jets eau fontaine -->
+<line x1="1910" y1="1784" x2="1910" y2="1760" stroke="#3878c0" stroke-width="3" opacity=".7"/>
+<line x1="1897" y1="1788" x2="1886" y2="1767" stroke="#2868b0" stroke-width="2" opacity=".6"/>
+<line x1="1923" y1="1788" x2="1934" y2="1767" stroke="#2868b0" stroke-width="2" opacity=".6"/>
+<line x1="1893" y1="1795" x2="1872" y2="1783" stroke="#2060a0" stroke-width="1.5" opacity=".5"/>
+<line x1="1927" y1="1795" x2="1948" y2="1783" stroke="#2060a0" stroke-width="1.5" opacity=".5"/>
+<!-- Label place -->
+<text x="1910" y="1672" text-anchor="middle" font-family="Cinzel,serif" font-size="16" font-weight="600" fill="#5070a0">GRANDE PLACE</text>
+
+<!-- ══════════════════════════════════
+     3 CHEMINS depuis la place
+════════════════════════════════════ -->
+<!-- Chemin gauche → LAC (vers l'ouest) -->
+<path d="M1680,1760 Q1560,1720 1440,1680 Q1300,1635 1160,1580 Q1020,1525 900,1460 Q800,1400 740,1320"
+  stroke="#1e3018" stroke-width="30" fill="none" opacity=".85"
+  data-tip="Chemin du Lac — mène au somptueux lac de Væja à l'ouest · flore préservée"/>
+<path d="M1680,1760 Q1560,1720 1440,1680 Q1300,1635 1160,1580 Q1020,1525 900,1460 Q800,1400 740,1320"
+  stroke="#2a4828" stroke-width="12" fill="none" opacity=".5"/>
+<text x="1180" y="1598" text-anchor="middle" font-family="Cinzel,serif" font-size="13"
+  font-style="italic" fill="#2a5030" transform="rotate(-15,1180,1598)">← Chemin du Lac</text>
+
+<!-- Chemin droit → ARBRE SACRÉ (vers l'est) -->
+<path d="M2140,1760 Q2280,1720 2420,1680 Q2560,1640 2680,1600 Q2800,1560 2900,1500 Q2980,1450 3020,1380"
+  stroke="#1e3018" stroke-width="30" fill="none" opacity=".85"
+  data-tip="Chemin de l'Arbre Sacré — mène à l'arbre aux feuilles bleu céruléen à l'est"/>
+<path d="M2140,1760 Q2280,1720 2420,1680 Q2560,1640 2680,1600 Q2800,1560 2900,1500 Q2980,1450 3020,1380"
+  stroke="#2a4828" stroke-width="12" fill="none" opacity=".5"/>
+<text x="2560" y="1655" text-anchor="middle" font-family="Cinzel,serif" font-size="13"
+  font-style="italic" fill="#2a5030" transform="rotate(-8,2560,1655)">Chemin de l'Arbre Sacré →</text>
+
+<!-- Chemin central → CHÂTEAU (vers le nord) -->
+<rect x="1862" y="1340" width="96" height="340"
+  fill="#1a2818" stroke="#2a3820" stroke-width="1" opacity=".8"
+  data-tip="Chemin principal — mène directement à la porte du château"/>
+<text x="1910" y="1510" text-anchor="middle" font-family="Cinzel,serif" font-size="13"
+  font-style="italic" fill="#2a5030" transform="rotate(-90,1910,1510)">↑ Vers le Château</text>
+
+<!-- ══════════════════════════════════
+     CHÂTEAU EN U (représentation schématique)
+     Centré autour de x=1910, y=900
+     Aile Ouest x=1360→1710, y=520→1320
+     Aile Est   x=2110→2460, y=520→1320
+     Corps Central x=1360→2460, y=1220→1460
+════════════════════════════════════ -->
+<!-- Aile Ouest -->
+<rect x="1360" y="520" width="350" height="800"
+  fill="#0d1828" stroke="#9090b8" stroke-width="3.5" rx="3"
+  data-tip="Château — Aile Ouest · cuisines, salles à manger, salles de bal, appartements royaux"/>
+<!-- Aile Est -->
+<rect x="2110" y="520" width="350" height="800"
+  fill="#0d1828" stroke="#9090b8" stroke-width="3.5" rx="3"
+  data-tip="Château — Aile Est · corps de garde, armureries, hôpital, salons diplomatiques"/>
+<!-- Corps Central (barre du U) -->
+<rect x="1360" y="1220" width="1100" height="360"
+  fill="#0d1828" stroke="#9090b8" stroke-width="3.5" rx="3"
+  data-tip="Château — Corps Central · hall d'entrée, chapelle, escaliers, archives, trésorerie"/>
+
+<!-- Texture intérieure légère sur le château -->
+<rect x="1374" y="534" width="322" height="772" fill="#0a1420" opacity=".5" rx="1"/>
+<rect x="2124" y="534" width="322" height="772" fill="#0a1420" opacity=".5" rx="1"/>
+<rect x="1374" y="1234" width="1072" height="332" fill="#0a1420" opacity=".5" rx="1"/>
+
+<!-- ── TOURS DU CHÂTEAU ── -->
+<!-- Tour NO château (grande, Observatoire) -->
+<circle cx="1378" cy="538" r="52"
+  fill="#0c1830" stroke="#9090b8" stroke-width="3"/>
+<circle cx="1378" cy="538" r="36"
+  fill="#08101e" stroke="#7080a8" stroke-width="2"/>
+<!-- Toit torsadé argent T.NO -->
+<polygon points="1378,482 1352,528 1404,528" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<path d="M1360,510 Q1378,501 1396,510" stroke="#8090b0" stroke-width="2" fill="none" opacity=".6"/>
+<path d="M1365,497 Q1378,490 1391,497" stroke="#9090b8" stroke-width="1.5" fill="none" opacity=".5"/>
+<!-- Pierre bleue T.NO -->
+<circle cx="1378" cy="484" r="6" fill="#3090f0" filter="url(#glow-bleu)" opacity=".9"/>
+<text x="1378" y="545" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#6070a8">T.NO</text>
+<text x="1378" y="559" text-anchor="middle" font-family="Cinzel,serif" font-size="9" font-style="italic" fill="#4060a0">Observatoire</text>
+
+<!-- Tour SO château -->
+<circle cx="1378" cy="1302" r="52"
+  fill="#0c1830" stroke="#9090b8" stroke-width="3"/>
+<circle cx="1378" cy="1302" r="36"
+  fill="#08101e" stroke="#7080a8" stroke-width="2"/>
+<polygon points="1378,1246 1352,1292 1404,1292" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<path d="M1360,1274 Q1378,1265 1396,1274" stroke="#8090b0" stroke-width="2" fill="none" opacity=".6"/>
+<circle cx="1378" cy="1248" r="6" fill="#3090f0" filter="url(#glow-bleu)" opacity=".9"/>
+<text x="1378" y="1309" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#6070a8">T.SO</text>
+<text x="1378" y="1323" text-anchor="middle" font-family="Cinzel,serif" font-size="9" font-style="italic" fill="#4060a0">Clocher</text>
+
+<!-- Tour NE château (grande) -->
+<circle cx="2442" cy="538" r="52"
+  fill="#0c1830" stroke="#9090b8" stroke-width="3"/>
+<circle cx="2442" cy="538" r="36"
+  fill="#08101e" stroke="#7080a8" stroke-width="2"/>
+<polygon points="2442,482 2416,528 2468,528" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<path d="M2424,510 Q2442,501 2460,510" stroke="#8090b0" stroke-width="2" fill="none" opacity=".6"/>
+<path d="M2429,497 Q2442,490 2455,497" stroke="#9090b8" stroke-width="1.5" fill="none" opacity=".5"/>
+<circle cx="2442" cy="484" r="6" fill="#3090f0" filter="url(#glow-bleu)" opacity=".9"/>
+<text x="2442" y="545" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#6070a8">T.NE</text>
+<text x="2442" y="559" text-anchor="middle" font-family="Cinzel,serif" font-size="9" font-style="italic" fill="#4060a0">Guet·Signaux</text>
+
+<!-- Tour SE château -->
+<circle cx="2442" cy="1302" r="52"
+  fill="#0c1830" stroke="#9090b8" stroke-width="3"/>
+<circle cx="2442" cy="1302" r="36"
+  fill="#08101e" stroke="#7080a8" stroke-width="2"/>
+<polygon points="2442,1246 2416,1292 2468,1292" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<path d="M2424,1274 Q2442,1265 2460,1274" stroke="#8090b0" stroke-width="2" fill="none" opacity=".6"/>
+<circle cx="2442" cy="1248" r="6" fill="#3090f0" filter="url(#glow-bleu)" opacity=".9"/>
+<text x="2442" y="1309" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#6070a8">T.SE</text>
+<text x="2442" y="1323" text-anchor="middle" font-family="Cinzel,serif" font-size="9" font-style="italic" fill="#4060a0">Cabinet Roi</text>
+
+<!-- Tours intermédiaires corps central (plus petites) -->
+<circle cx="1700" cy="1390" r="36" fill="#0c1830" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="1700" cy="1390" r="24" fill="#08101e" stroke="#7080a8" stroke-width="1.5"/>
+<polygon points="1700,1352 1682,1380 1718,1380" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<circle cx="1700" cy="1354" r="5" fill="#3090f0" filter="url(#glow-bleu)" opacity=".85"/>
+
+<circle cx="2120" cy="1390" r="36" fill="#0c1830" stroke="#9090b8" stroke-width="2.5"/>
+<circle cx="2120" cy="1390" r="24" fill="#08101e" stroke="#7080a8" stroke-width="1.5"/>
+<polygon points="2120,1352 2102,1380 2138,1380" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<circle cx="2120" cy="1354" r="5" fill="#3090f0" filter="url(#glow-bleu)" opacity=".85"/>
+
+<!-- Petite tour centrale corps central -->
+<circle cx="1910" cy="1240" r="28" fill="#0c1830" stroke="#9090b8" stroke-width="2"/>
+<circle cx="1910" cy="1240" r="18" fill="#08101e" stroke="#7080a8" stroke-width="1.5"/>
+<polygon points="1910,1210 1897,1232 1923,1232" fill="#16243a" stroke="#9090b8" stroke-width="1.5"/>
+<circle cx="1910" cy="1212" r="4" fill="#3090f0" filter="url(#glow-bleu)" opacity=".85"/>
+
+<!-- PORTE DU CHÂTEAU (côté sud corps central) -->
+<rect x="1862" y="1578" width="96" height="10"
+  fill="#9090b8" stroke="#c0d0e0" stroke-width="1.5" filter="url(#glow-argent)"
+  data-tip="Porte du Château — argent massif, runes gravées, blason des Rúnkonur en pierre précieuse bleue"/>
+<circle cx="1910" cy="1583" r="10" fill="#0050b0" filter="url(#glow-bleu)" opacity=".9"/>
+<circle cx="1910" cy="1583" r="6" fill="#3090f0" opacity=".9"/>
+<text x="1910" y="1612" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#6070a0">Porte du Château</text>
+
+<!-- Label château -->
+<text x="1910" y="870" text-anchor="middle" font-family="Cinzel,serif" font-size="20" font-weight="800" fill="#9090b8" filter="url(#glow-argent)">CHÂTEAU DES HAUTES LUMIÈRES</text>
+<text x="1910" y="895" text-anchor="middle" font-family="Cinzel,serif" font-size="13" font-style="italic" fill="#5070a0">Væja</text>
+
+<!-- COUR INTÉRIEURE DU CHÂTEAU (entre les deux ailes) -->
+<!-- Fond cour -->
+<rect x="1710" y="520" width="400" height="700" fill="#040e08" rx="2"/>
+<!-- Barrière Magique (ligne violette pulsante) -->
+<rect x="1710" y="520" width="400" height="700"
+  fill="none" stroke="#9030e0" stroke-width="4"
+  stroke-dasharray="14,7" rx="2"
+  filter="url(#glow-magique)"
+  data-tip="Barrière Magique — protection enchantée infranchissable · sépare la cour intérieure du reste du domaine"/>
+<rect x="1714" y="524" width="392" height="692"
+  fill="none" stroke="#c060ff" stroke-width="1.5"
+  stroke-dasharray="9,5" rx="2" opacity=".4"/>
+<!-- Fontaine elfique intérieure -->
+<circle cx="1910" cy="880" r="40"
+  fill="#071020" stroke="#3060a0" stroke-width="2" opacity=".8"
+  data-tip="Fontaine elfique — eau enchantée de la cour intérieure"/>
+<circle cx="1910" cy="880" r="24" fill="#1040a0" opacity=".5" filter="url(#glow-bleu)"/>
+<circle cx="1910" cy="880" r="10" fill="#3080e0" opacity=".7"/>
+<text x="1910" y="1040" text-anchor="middle" font-family="Cinzel,serif" font-size="13" font-style="italic" fill="#2a1860">Cour Intérieure</text>
+
+<!-- ══════════════════════════════════
+     ARBRE SACRÉ (est, x≈3060, y≈900)
+════════════════════════════════════ -->
+<!-- Aura lumineuse bleue (large) -->
+<circle cx="3060" cy="900" r="160" fill="#1040700" opacity=".12" filter="url(#glow-arbre)"/>
+<!-- Tronc -->
+<rect x="3048" y="940" width="24" height="180" rx="7"
+  fill="#141010" stroke="#9090b0" stroke-width="2"/>
+<!-- Runes argentées sur l'écorce -->
+<text x="3060" y="988" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#9090b0" opacity=".85">ᚠ ᚱ</text>
+<text x="3060" y="1012" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#8080a0" opacity=".75">ᛗ ᚲ</text>
+<text x="3060" y="1036" text-anchor="middle" font-family="Cinzel,serif" font-size="10" fill="#9090b0" opacity=".8">ᛁ ᚾ</text>
+<!-- Racines -->
+<path d="M3048,1118 Q3028,1132 3020,1152" stroke="#141010" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M3060,1120 Q3060,1140 3056,1158" stroke="#141010" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M3072,1118 Q3092,1132 3100,1152" stroke="#141010" stroke-width="7" fill="none" stroke-linecap="round"/>
+<!-- Feuillage BLEU CÉRULÉEN (gros cercle + variantes) -->
+<circle cx="3060" cy="840" r="100" fill="#1050a0" opacity=".8" filter="url(#glow-arbre)"
+  data-tip="Arbre Sacré — énorme arbre millénaire · feuilles bleu céruléen · runes argentées gravées dans l'écorce · source de la magie runique du château"/>
+<circle cx="3060" cy="808" r="75" fill="url(#grad-arbre)" opacity=".85" filter="url(#glow-arbre)"/>
+<circle cx="3020" cy="845" r="55" fill="#1a62a8" opacity=".7"/>
+<circle cx="3100" cy="840" r="50" fill="#1858a0" opacity=".7"/>
+<circle cx="3060" cy="778" r="44" fill="#2878b8" opacity=".8"/>
+<!-- Éclats de feuilles (reflets céruléens) -->
+<ellipse cx="2998" cy="818" rx="16" ry="9" fill="#70b0e0" opacity=".5" transform="rotate(-30,2998,818)"/>
+<ellipse cx="3122" cy="814" rx="16" ry="9" fill="#70b0e0" opacity=".5" transform="rotate(30,3122,814)"/>
+<ellipse cx="3060" cy="756" rx="18" ry="9" fill="#80c0e8" opacity=".6"/>
+<ellipse cx="3030" cy="870" rx="13" ry="7" fill="#60a8d8" opacity=".45" transform="rotate(-15,3030,870)"/>
+<ellipse cx="3092" cy="865" rx="13" ry="7" fill="#60a8d8" opacity=".45" transform="rotate(15,3092,865)"/>
+<!-- Labels arbre -->
+<text x="3060" y="1190" text-anchor="middle" font-family="Cinzel,serif" font-size="16" font-weight="600" fill="#4080c0" filter="url(#glow-bleu)">ARBRE SACRÉ</text>
+<text x="3060" y="1210" text-anchor="middle" font-family="Cinzel,serif" font-size="12" font-style="italic" fill="#2860a0">Feuilles bleu céruléen · Runes d'argent</text>
+
+<!-- ══════════════════════════════════
+     ÉCURIES, ARÈNES, CASERNE (est du château)
+════════════════════════════════════ -->
+<!-- Écuries -->
+<rect x="2580" y="480" width="320" height="190"
+  fill="#0d1820" stroke="#2a4060" stroke-width="2" rx="3"
+  data-tip="Écuries Royales — chevaux de guerre, palefrois, montures d'apparat, maréchal-ferrant, sellerie"/>
+<!-- Boxes écuries -->
+<line x1="2640" y1="494" x2="2640" y2="656" stroke="#2a4060" stroke-width="1.5"/>
+<line x1="2700" y1="494" x2="2700" y2="656" stroke="#2a4060" stroke-width="1.5"/>
+<line x1="2760" y1="494" x2="2760" y2="656" stroke="#2a4060" stroke-width="1.5"/>
+<line x1="2820" y1="494" x2="2820" y2="656" stroke="#2a4060" stroke-width="1.5"/>
+<line x1="2580" y1="575" x2="2900" y2="575" stroke="#2a4060" stroke-width="1"/>
+<text x="2740" y="528" text-anchor="middle" font-family="Cinzel,serif" font-size="16" font-weight="600" fill="#3a5068">ÉCURIES</text>
+<text x="2740" y="550" text-anchor="middle" font-family="Cinzel,serif" font-size="13" font-style="italic" fill="#2a4058">Royales</text>
+
+<!-- Arène I -->
+<rect x="2580" y="690" width="148" height="260"
+  fill="#0a1218" stroke="#2a3a50" stroke-width="2" rx="2"
+  data-tip="Arène I — combat à l'épée, tir à l'arc, escrime, entraînement individuel"/>
+<ellipse cx="2654" cy="820" rx="52" ry="90"
+  fill="none" stroke="#2a4060" stroke-width="2" stroke-dasharray="6,4" opacity=".6"/>
+<text x="2654" y="818" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#2a4060">ARÈNE I</text>
+
+<!-- Arène II -->
+<rect x="2752" y="690" width="148" height="260"
+  fill="#0a1218" stroke="#2a3a50" stroke-width="2" rx="2"
+  data-tip="Arène II — cavalerie, manœuvres tactiques, joutes, entraînement collectif"/>
+<ellipse cx="2826" cy="820" rx="52" ry="90"
+  fill="none" stroke="#2a4060" stroke-width="2" stroke-dasharray="6,4" opacity=".6"/>
+<text x="2826" y="818" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#2a4060">ARÈNE II</text>
+
+<!-- Caserne soldats -->
+<rect x="2580" y="970" width="320" height="190"
+  fill="#0d1820" stroke="#2a4060" stroke-width="2" rx="3"
+  data-tip="Caserne des Soldats — résidence de la garnison, armurerie opérationnelle, salle commune, commandement militaire"/>
+<text x="2740" y="1054" text-anchor="middle" font-family="Cinzel,serif" font-size="16" font-weight="600" fill="#3a5068">CASERNE</text>
+<text x="2740" y="1076" text-anchor="middle" font-family="Cinzel,serif" font-size="13" font-style="italic" fill="#2a4058">des Soldats</text>
+<!-- Fenêtres caserne -->
+<rect x="2600" y="1000" width="28" height="18" rx="1" fill="#0a1420" stroke="#2a4060" stroke-width="1"/>
+<rect x="2640" y="1000" width="28" height="18" rx="1" fill="#0a1420" stroke="#2a4060" stroke-width="1"/>
+<rect x="2760" y="1000" width="28" height="18" rx="1" fill="#0a1420" stroke="#2a4060" stroke-width="1"/>
+<rect x="2800" y="1000" width="28" height="18" rx="1" fill="#0a1420" stroke="#2a4060" stroke-width="1"/>
+<rect x="2840" y="1000" width="28" height="18" rx="1" fill="#0a1420" stroke="#2a4060" stroke-width="1"/>
+
+<!-- ══════════════════════════════════
+     JARDINS ROYAUX (sud du château)
+════════════════════════════════════ -->
+<rect x="860" y="1480" width="2100" height="440"
+  fill="url(#jardin)" stroke="#1a3020" stroke-width="2" rx="4"
+  data-tip="Jardins Royaux — grands arbres, fleurs rares, fontaines enchantées, bancs de repos · promenades royales quotidiennes"/>
+<!-- Allées jardins (horizontales et verticales) -->
+<rect x="860" y="1480" width="2100" height="16" fill="#1a2818" opacity=".5"/>
+<rect x="1100" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<rect x="1400" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<rect x="1700" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<rect x="2100" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<rect x="2400" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<rect x="2700" y="1480" width="18" height="440" fill="#1a2818" opacity=".4"/>
+<!-- Grands arbres jardins -->
+<circle cx="960" cy="1570" r="44" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<circle cx="960" cy="1552" r="30" fill="#0e2a14" opacity=".8"/>
+<circle cx="1210" cy="1590" r="40" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<circle cx="1210" cy="1574" r="26" fill="#0e2a14" opacity=".8"/>
+<circle cx="1510" cy="1572" r="38" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<circle cx="2200" cy="1570" r="42" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<circle cx="2200" cy="1552" r="28" fill="#0e2a14" opacity=".8"/>
+<circle cx="2510" cy="1590" r="38" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<circle cx="2810" cy="1572" r="40" fill="#0c2210" stroke="#1a3818" stroke-width="2" opacity=".9"/>
+<!-- Fontaines jardins -->
+<circle cx="1250" cy="1730" r="34"
+  fill="#071828" stroke="#3060a0" stroke-width="2"
+  data-tip="Fontaine des Jardins Ouest — eau cristalline, reflets changeants"/>
+<circle cx="1250" cy="1730" r="20" fill="#071020" stroke="#3050a0" stroke-width="1.5"/>
+<circle cx="1250" cy="1730" r="8" fill="#1050b0" opacity=".7" filter="url(#glow-bleu)"/>
+<circle cx="2570" cy="1720" r="32"
+  fill="#071828" stroke="#3060a0" stroke-width="2"
+  data-tip="Fontaine des Jardins Est — eau cristalline, murmure apaisant"/>
+<circle cx="2570" cy="1720" r="18" fill="#071020" stroke="#3050a0" stroke-width="1.5"/>
+<circle cx="2570" cy="1720" r="7" fill="#1050b0" opacity=".7" filter="url(#glow-bleu)"/>
+<!-- Bancs jardins -->
+<rect x="920" y="1680" width="38" height="11" rx="3" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/>
+<rect x="1360" y="1700" width="38" height="11" rx="3" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/>
+<rect x="1800" y="1690" width="38" height="11" rx="3" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/>
+<rect x="2650" y="1680" width="38" height="11" rx="3" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/>
+<rect x="2920" y="1700" width="38" height="11" rx="3" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/>
+<!-- Parterres fleurs colorés -->
+<rect x="880" y="1520" width="100" height="44" rx="3" fill="#1a0c10" stroke="#3a1820" stroke-width="1.5" opacity=".75"/>
+<text x="930" y="1547" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#5a2030" opacity=".9">✿  ✿  ✿</text>
+<rect x="1620" y="1530" width="100" height="44" rx="3" fill="#0c0c1a" stroke="#1a1830" stroke-width="1.5" opacity=".75"/>
+<text x="1670" y="1557" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#303060" opacity=".9">✿  ✿  ✿</text>
+<rect x="2750" y="1520" width="100" height="44" rx="3" fill="#0c1808" stroke="#1a3010" stroke-width="1.5" opacity=".75"/>
+<text x="2800" y="1547" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#2a4018" opacity=".9">✿  ✿  ✿</text>
+<!-- Label jardins -->
+<text x="1910" y="1872" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-style="italic" fill="#1a5030">Jardins Royaux</text>
+<text x="1910" y="1894" text-anchor="middle" font-family="Cinzel,serif" font-size="12" font-style="italic" fill="#133020">Grands arbres · Fleurs · Fontaines · Bancs</text>
+
+<!-- ══════════════════════════════════
+     BOUSSOLE
+════════════════════════════════════ -->
+<g transform="translate(3490,50)">
+  <text x="16" y="18" text-anchor="middle" font-family="Cinzel,serif" font-size="22" font-weight="700" fill="#c8a040">N</text>
+  <line x1="16" y1="22" x2="16" y2="56" stroke="#c8a040" stroke-width="3"/>
+  <polygon points="16,19 9,44 16,37 23,44" fill="#c8a040"/>
+  <text x="16" y="76" text-anchor="middle" font-family="Cinzel,serif" font-size="14" fill="#6080a0">S</text>
+  <text x="-8" y="48" text-anchor="middle" font-family="Cinzel,serif" font-size="13" fill="#6080a0">O</text>
+  <text x="40" y="48" text-anchor="middle" font-family="Cinzel,serif" font-size="13" fill="#6080a0">E</text>
+</g>
+
+<!-- TOOLTIP -->
+<g id="TT" style="display:none;pointer-events:none;">
+  <rect id="TT-bg" rx="4" fill="#030c18" fill-opacity=".97" stroke="#c8a040" stroke-width="1.5"/>
+  <text id="TT-tx" font-family="Cinzel,serif" font-size="15" fill="#e8f0fa"/>
+</g>
+<script src="cour_tooltip.js"></script>
+</svg>
+</div>
+
+<!-- LÉGENDE -->
+<footer class="legend">
+  <div class="li">
+    <svg width="32" height="16"><rect x="1" y="1" width="30" height="14" rx="1" fill="#182030" stroke="#9090b8" stroke-width="2"/></svg>
+    <span class="ll">Rempart argenté · runes pâles</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="22" height="22">
+      <circle cx="11" cy="11" r="9" fill="#0c1830" stroke="#9090b8" stroke-width="2"/>
+      <polygon points="11,3 5,10 17,10" fill="#16243a" stroke="#9090b8" stroke-width="1"/>
+      <circle cx="11" cy="4" r="2.5" fill="#3090f0" opacity=".9"/>
+    </svg>
+    <span class="ll">Tour · toit torsadé argent · pierre bleue</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="#1050b0" opacity=".85"/><circle cx="9" cy="9" r="4" fill="#4090f0"/><circle cx="7" cy="7" r="1.5" fill="#a0d0ff" opacity=".7"/></svg>
+    <span class="ll">Pierre précieuse bleue · Blason Rúnkonur</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="36" height="16"><rect x="1" y="1" width="34" height="14" rx="2" fill="#040e08" stroke="#9030e0" stroke-width="2.5" stroke-dasharray="6,3"/></svg>
+    <span class="ll">Barrière Magique — Cour Intérieure</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="24" height="22"><ellipse cx="12" cy="12" rx="9" ry="8" fill="#1050a0" opacity=".8"/><ellipse cx="12" cy="10" rx="6" ry="5" fill="#2878b8" opacity=".7"/></svg>
+    <span class="ll">Arbre Sacré · feuilles bleu céruléen</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="36" height="10"><path d="M2,5 Q18,2 34,5" stroke="#8090b8" stroke-width="3.5" fill="none"/><path d="M2,5 Q18,2 34,5" stroke="#c0d0e8" stroke-width="1.5" fill="none" opacity=".5"/></svg>
+    <span class="ll">Pont sinueux · dalles argentées</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="22" height="22"><circle cx="11" cy="11" r="9" fill="#071828"/><circle cx="11" cy="11" r="5" fill="#071020"/></svg>
+    <span class="ll">Lac · eau</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="18" height="18"><circle cx="9" cy="9" r="7" fill="#0c2210"/><circle cx="9" cy="8" r="4" fill="#0e2a14"/></svg>
+    <span class="ll">Arbre</span>
+  </div>
+  <div class="sep"></div>
+  <div class="li">
+    <svg width="18" height="18"><rect x="1" y="4" width="16" height="9" rx="2" fill="#141e10" stroke="#2a4020" stroke-width="1.5"/></svg>
+    <span class="ll">Banc</span>
+  </div>
+</footer>
+
+</body>
+</html>
