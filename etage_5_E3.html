@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Château — 3e Étage — Invités</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;background:#07101a;overflow:hidden;display:flex;flex-direction:column;}
+.nav{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;background:linear-gradient(180deg,#0c1828,#07101a);border-bottom:1px solid #1a3050;flex-wrap:wrap;}
+.nav-title{font-family:'Cinzel',serif;font-size:1rem;color:#c8a040;letter-spacing:.12em;margin-right:14px;white-space:nowrap;text-shadow:0 0 16px rgba(200,160,64,.3);}
+.tab{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.06em;padding:6px 14px;border:1px solid #2a4060;background:#0a1828;color:#7090b0;cursor:pointer;transition:all .2s;border-radius:2px;white-space:nowrap;text-decoration:none;display:inline-block;}
+.tab:hover{background:#142038;color:#e0c060;border-color:#c8a040;}
+.tab.active{background:linear-gradient(135deg,#1a3a6a,#0e2448);color:#e0c060;border-color:#c8a040;box-shadow:0 0 10px rgba(200,160,64,.2);}
+.plan{flex:1 1 0;min-height:0;display:flex;}
+.plan svg{width:100%;height:100%;display:block;}
+.legend{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:20px;padding:6px 16px;background:#050d18;border-top:1px solid #1a3050;flex-wrap:wrap;}
+.li{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.ll{font-family:'Cinzel',serif;font-size:.8rem;color:#6080a0;letter-spacing:.04em;}
+.sep{width:1px;height:22px;background:#1a3050;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="nav-title">⚜ Château des Hautes Lumières</span>
+  <a class="tab" href="etage_1_SS.html">⛓ Sous-Sol</a>
+  <a class="tab" href="etage_2_RDC.html">Rez-de-Chaussée</a>
+  <a class="tab" href="etage_3_E1.html">1er Étage</a>
+  <a class="tab" href="etage_4_E2.html">2e Étage — Royale</a>
+  <a class="tab active" href="etage_5_E3.html">3e Étage — Invités</a>
+</nav>
+<div class="plan">
+<svg viewBox="0 0 2800 1480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="stone" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#0a141e"/>
+    <rect x="0" y="0" width="12" height="12" fill="#0c1820" opacity=".5"/>
+    <rect x="12" y="12" width="12" height="12" fill="#070f19" opacity=".5"/>
+  </pattern>
+</defs>
+<rect width="2800" height="1480" fill="#030810"/>
+<rect x="20" y="20" width="880" height="1035" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="34" y="34" width="852" height="1007" fill="#07111e"/>
+<circle cx="78" cy="78" r="48" fill="#0a1828" stroke="#2a5080" stroke-width="2"/>
+<circle cx="78" cy="78" r="34" fill="#050e1c" stroke="#3a6090" stroke-width="2" data-tip="Tour NO — Observatoire Royal · télescopes, cartographie céleste, astronome de la cour"/>
+<text x="78" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#4a80c0">T.NO</text>
+<text x="78" y="89" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#3a70b0">Observatoire</text>
+<circle cx="78" cy="977" r="48" fill="#1a1208" stroke="#5a3010" stroke-width="2"/>
+<circle cx="78" cy="977" r="34" fill="#100e06" stroke="#7a4020" stroke-width="2" data-tip="Tour SO — Clocher & Carillon · cloches du château, horloge, rythme de la vie"/>
+<text x="78" y="971" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#b07040">T.SO</text>
+<text x="78" y="988" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#906030">Clocher</text>
+<rect x="34" y="34" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="460" y="62" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — AILE OUEST · 3e ÉT.</text>
+<rect x="34" y="510" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="460" y="538" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR CENTRAL — AILE OUEST · 3e ÉT.</text>
+<rect x="34" y="995" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="34" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="840" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="420" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="80" y="80" width="340" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite I — 5 chambres nobles, salon commun avec cheminée"/>
+<text x="250" y="159" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE I</text>
+<text x="250" y="183" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 1–5</text>
+<line x1="80" y1="140" x2="80" y2="180" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="140" x2="85" y2="180" stroke="#3a9090" stroke-width="4"/>
+<line x1="200" y1="263" x2="240" y2="263" stroke="#c8a040" stroke-width="5"/>
+<path d="M240,255 A12,12 0 0,1 240,271" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="80" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 1 — Suite I"/>
+<text x="653" y="98" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 1</text>
+<line x1="840" y1="100" x2="840" y2="140" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="100" x2="835" y2="140" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="116" x2="626" y2="116" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,108 A12,12 0 0,1 626,124" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="116" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 2 — Suite I"/>
+<text x="653" y="134" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 2</text>
+<line x1="840" y1="136" x2="840" y2="176" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="136" x2="835" y2="176" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="152" x2="626" y2="152" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,144 A12,12 0 0,1 626,160" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="152" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 3 — Suite I"/>
+<text x="653" y="170" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 3</text>
+<line x1="840" y1="172" x2="840" y2="212" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="172" x2="835" y2="212" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="188" x2="626" y2="188" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,180 A12,12 0 0,1 626,196" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="188" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 4 — Suite I"/>
+<text x="653" y="206" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 4</text>
+<line x1="840" y1="208" x2="840" y2="248" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="208" x2="835" y2="248" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="224" x2="626" y2="224" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,216 A12,12 0 0,1 626,232" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="224" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 5 — Suite I"/>
+<text x="653" y="242" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 5</text>
+<line x1="840" y1="244" x2="840" y2="284" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="244" x2="835" y2="284" stroke="#3a9090" stroke-width="4"/>
+<rect x="80" y="263" width="340" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite II — 5 chambres nobles, salon commun avec vue sur cour"/>
+<text x="250" y="342" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE II</text>
+<text x="250" y="366" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 6–10</text>
+<line x1="80" y1="323" x2="80" y2="363" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="323" x2="85" y2="363" stroke="#3a9090" stroke-width="4"/>
+<line x1="200" y1="446" x2="240" y2="446" stroke="#c8a040" stroke-width="5"/>
+<path d="M240,438 A12,12 0 0,1 240,454" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="263" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 6 — Suite II"/>
+<text x="653" y="281" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 6</text>
+<line x1="840" y1="283" x2="840" y2="323" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="283" x2="835" y2="323" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="299" x2="626" y2="299" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,291 A12,12 0 0,1 626,307" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="299" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 7 — Suite II"/>
+<text x="653" y="317" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 7</text>
+<line x1="840" y1="319" x2="840" y2="359" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="319" x2="835" y2="359" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="335" x2="626" y2="335" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,327 A12,12 0 0,1 626,343" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="335" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 8 — Suite II"/>
+<text x="653" y="353" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 8</text>
+<line x1="840" y1="355" x2="840" y2="395" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="355" x2="835" y2="395" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="371" x2="626" y2="371" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,363 A12,12 0 0,1 626,379" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="371" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 9 — Suite II"/>
+<text x="653" y="389" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 9</text>
+<line x1="840" y1="391" x2="840" y2="431" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="391" x2="835" y2="431" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="407" x2="626" y2="407" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,399 A12,12 0 0,1 626,415" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="407" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 10 — Suite II"/>
+<text x="653" y="425" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 10</text>
+<line x1="840" y1="427" x2="840" y2="467" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="427" x2="835" y2="467" stroke="#3a9090" stroke-width="4"/>
+<rect x="80" y="446" width="340" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite III — 5 chambres nobles, salon commun bibliothèque légère"/>
+<text x="250" y="525" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE III</text>
+<text x="250" y="549" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 11–15</text>
+<line x1="80" y1="506" x2="80" y2="546" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="506" x2="85" y2="546" stroke="#3a9090" stroke-width="4"/>
+<line x1="200" y1="629" x2="240" y2="629" stroke="#c8a040" stroke-width="5"/>
+<path d="M240,621 A12,12 0 0,1 240,637" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="446" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 11 — Suite III"/>
+<text x="653" y="464" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 11</text>
+<line x1="840" y1="466" x2="840" y2="506" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="466" x2="835" y2="506" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="482" x2="626" y2="482" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,474 A12,12 0 0,1 626,490" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="482" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 12 — Suite III"/>
+<text x="653" y="500" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 12</text>
+<line x1="840" y1="502" x2="840" y2="542" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="502" x2="835" y2="542" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="518" x2="626" y2="518" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,510 A12,12 0 0,1 626,526" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="518" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 13 — Suite III"/>
+<text x="653" y="536" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 13</text>
+<line x1="840" y1="538" x2="840" y2="578" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="538" x2="835" y2="578" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="554" x2="626" y2="554" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,546 A12,12 0 0,1 626,562" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="554" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 14 — Suite III"/>
+<text x="653" y="572" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 14</text>
+<line x1="840" y1="574" x2="840" y2="614" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="574" x2="835" y2="614" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="590" x2="626" y2="590" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,582 A12,12 0 0,1 626,598" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="590" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 15 — Suite III"/>
+<text x="653" y="608" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 15</text>
+<line x1="840" y1="610" x2="840" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="610" x2="835" y2="650" stroke="#3a9090" stroke-width="4"/>
+<rect x="80" y="629" width="340" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite IV — 5 chambres nobles, salon commun balcon intérieur"/>
+<text x="250" y="708" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE IV</text>
+<text x="250" y="732" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 16–20</text>
+<line x1="80" y1="689" x2="80" y2="729" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="689" x2="85" y2="729" stroke="#3a9090" stroke-width="4"/>
+<line x1="200" y1="812" x2="240" y2="812" stroke="#c8a040" stroke-width="5"/>
+<path d="M240,804 A12,12 0 0,1 240,820" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="629" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 16 — Suite IV"/>
+<text x="653" y="647" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 16</text>
+<line x1="840" y1="649" x2="840" y2="689" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="649" x2="835" y2="689" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="665" x2="626" y2="665" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,657 A12,12 0 0,1 626,673" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="665" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 17 — Suite IV"/>
+<text x="653" y="683" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 17</text>
+<line x1="840" y1="685" x2="840" y2="725" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="685" x2="835" y2="725" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="701" x2="626" y2="701" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,693 A12,12 0 0,1 626,709" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="701" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 18 — Suite IV"/>
+<text x="653" y="719" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 18</text>
+<line x1="840" y1="721" x2="840" y2="761" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="721" x2="835" y2="761" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="737" x2="626" y2="737" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,729 A12,12 0 0,1 626,745" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="737" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 19 — Suite IV"/>
+<text x="653" y="755" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 19</text>
+<line x1="840" y1="757" x2="840" y2="797" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="757" x2="835" y2="797" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="773" x2="626" y2="773" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,765 A12,12 0 0,1 626,781" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="773" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 20 — Suite IV"/>
+<text x="653" y="791" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 20</text>
+<line x1="840" y1="793" x2="840" y2="833" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="793" x2="835" y2="833" stroke="#3a9090" stroke-width="4"/>
+<rect x="80" y="812" width="340" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite V — 5 chambres nobles, salon commun côté jardins"/>
+<text x="250" y="891" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE V</text>
+<text x="250" y="915" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 21–25</text>
+<line x1="80" y1="872" x2="80" y2="912" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="872" x2="85" y2="912" stroke="#3a9090" stroke-width="4"/>
+<line x1="200" y1="995" x2="240" y2="995" stroke="#c8a040" stroke-width="5"/>
+<path d="M240,987 A12,12 0 0,1 240,1003" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="812" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 21 — Suite V"/>
+<text x="653" y="830" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 21</text>
+<line x1="840" y1="832" x2="840" y2="872" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="832" x2="835" y2="872" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="848" x2="626" y2="848" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,840 A12,12 0 0,1 626,856" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="848" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 22 — Suite V"/>
+<text x="653" y="866" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 22</text>
+<line x1="840" y1="868" x2="840" y2="908" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="868" x2="835" y2="908" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="884" x2="626" y2="884" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,876 A12,12 0 0,1 626,892" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="884" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 23 — Suite V"/>
+<text x="653" y="902" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 23</text>
+<line x1="840" y1="904" x2="840" y2="944" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="904" x2="835" y2="944" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="920" x2="626" y2="920" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,912 A12,12 0 0,1 626,928" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="920" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 24 — Suite V"/>
+<text x="653" y="938" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 24</text>
+<line x1="840" y1="940" x2="840" y2="980" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="940" x2="835" y2="980" stroke="#3a9090" stroke-width="4"/>
+<line x1="586" y1="956" x2="626" y2="956" stroke="#c8a040" stroke-width="5"/>
+<path d="M626,948 A12,12 0 0,1 626,964" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="466" y="956" width="374" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 25 — Suite V"/>
+<text x="653" y="974" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 25</text>
+<line x1="840" y1="976" x2="840" y2="1016" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="976" x2="835" y2="1016" stroke="#3a9090" stroke-width="4"/>
+<rect x="886" y="490" width="28" height="60" fill="#0c1828" stroke="#c8a040" stroke-width="2"/>
+<line x1="900" y1="495" x2="900" y2="545" stroke="#c8a040" stroke-width="6"/>
+<path d="M892,545 A20,20 0 0,0 912,545" stroke="#c8a040" stroke-width="2.5" fill="none"/>
+<text x="870" y="525" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#c8a040" transform="rotate(-90,870,525)">→ COUR</text>
+<rect x="1900" y="20" width="880" height="1035" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="1914" y="34" width="852" height="1007" fill="#07111e"/>
+<circle cx="2722" cy="78" r="48" fill="#102018" stroke="#1a5a20" stroke-width="2"/>
+<circle cx="2722" cy="78" r="34" fill="#0c1810" stroke="#2a7a30" stroke-width="2" data-tip="Tour NE — Guet & Signaux · feux de signalisation, communication longue distance"/>
+<text x="2722" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#2a8030">T.NE</text>
+<text x="2722" y="89" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#208020">Guet·Signaux</text>
+<circle cx="2722" cy="977" r="48" fill="#101828" stroke="#1a2a4a" stroke-width="2"/>
+<circle cx="2722" cy="977" r="34" fill="#0c101e" stroke="#2a3a60" stroke-width="2" data-tip="Tour SE — Grenier & Bannières · oriflammes, drapeaux, stockage grand format"/>
+<text x="2722" y="971" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#2a4a80">T.SE</text>
+<text x="2722" y="988" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#1a3a60">Bannières</text>
+<rect x="1914" y="34" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="2340" y="62" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — AILE EST · 3e ÉT.</text>
+<rect x="1914" y="510" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="2340" y="538" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR CENTRAL — AILE EST · 3e ÉT.</text>
+<rect x="1914" y="995" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1914" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2720" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2300" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2356" y="80" width="364" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite VI — 5 chambres nobles, salon commun avec cheminée"/>
+<text x="2538" y="159" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE VI</text>
+<text x="2538" y="183" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 26–30</text>
+<line x1="2720" y1="140" x2="2720" y2="180" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="140" x2="2715" y2="180" stroke="#3a9090" stroke-width="4"/>
+<line x1="2476" y1="263" x2="2516" y2="263" stroke="#c8a040" stroke-width="5"/>
+<path d="M2516,255 A12,12 0 0,1 2516,271" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="80" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 26 — Suite VI"/>
+<text x="2135" y="98" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 26</text>
+<line x1="1960" y1="100" x2="1960" y2="140" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="100" x2="1965" y2="140" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="116" x2="2120" y2="116" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,108 A12,12 0 0,1 2120,124" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="116" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 27 — Suite VI"/>
+<text x="2135" y="134" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 27</text>
+<line x1="1960" y1="136" x2="1960" y2="176" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="136" x2="1965" y2="176" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="152" x2="2120" y2="152" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,144 A12,12 0 0,1 2120,160" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="152" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 28 — Suite VI"/>
+<text x="2135" y="170" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 28</text>
+<line x1="1960" y1="172" x2="1960" y2="212" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="172" x2="1965" y2="212" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="188" x2="2120" y2="188" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,180 A12,12 0 0,1 2120,196" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="188" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 29 — Suite VI"/>
+<text x="2135" y="206" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 29</text>
+<line x1="1960" y1="208" x2="1960" y2="248" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="208" x2="1965" y2="248" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="224" x2="2120" y2="224" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,216 A12,12 0 0,1 2120,232" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="224" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 30 — Suite VI"/>
+<text x="2135" y="242" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 30</text>
+<line x1="1960" y1="244" x2="1960" y2="284" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="244" x2="1965" y2="284" stroke="#3a9090" stroke-width="4"/>
+<rect x="2356" y="263" width="364" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite VII — 5 chambres nobles, salon commun vue nord"/>
+<text x="2538" y="342" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE VII</text>
+<text x="2538" y="366" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 31–35</text>
+<line x1="2720" y1="323" x2="2720" y2="363" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="323" x2="2715" y2="363" stroke="#3a9090" stroke-width="4"/>
+<line x1="2476" y1="446" x2="2516" y2="446" stroke="#c8a040" stroke-width="5"/>
+<path d="M2516,438 A12,12 0 0,1 2516,454" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="263" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 31 — Suite VII"/>
+<text x="2135" y="281" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 31</text>
+<line x1="1960" y1="283" x2="1960" y2="323" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="283" x2="1965" y2="323" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="299" x2="2120" y2="299" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,291 A12,12 0 0,1 2120,307" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="299" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 32 — Suite VII"/>
+<text x="2135" y="317" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 32</text>
+<line x1="1960" y1="319" x2="1960" y2="359" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="319" x2="1965" y2="359" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="335" x2="2120" y2="335" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,327 A12,12 0 0,1 2120,343" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="335" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 33 — Suite VII"/>
+<text x="2135" y="353" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 33</text>
+<line x1="1960" y1="355" x2="1960" y2="395" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="355" x2="1965" y2="395" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="371" x2="2120" y2="371" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,363 A12,12 0 0,1 2120,379" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="371" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 34 — Suite VII"/>
+<text x="2135" y="389" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 34</text>
+<line x1="1960" y1="391" x2="1960" y2="431" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="391" x2="1965" y2="431" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="407" x2="2120" y2="407" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,399 A12,12 0 0,1 2120,415" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="407" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 35 — Suite VII"/>
+<text x="2135" y="425" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 35</text>
+<line x1="1960" y1="427" x2="1960" y2="467" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="427" x2="1965" y2="467" stroke="#3a9090" stroke-width="4"/>
+<rect x="2356" y="446" width="364" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite VIII — 5 chambres nobles, salon commun correspondance"/>
+<text x="2538" y="525" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE VIII</text>
+<text x="2538" y="549" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 36–40</text>
+<line x1="2720" y1="506" x2="2720" y2="546" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="506" x2="2715" y2="546" stroke="#3a9090" stroke-width="4"/>
+<line x1="2476" y1="629" x2="2516" y2="629" stroke="#c8a040" stroke-width="5"/>
+<path d="M2516,621 A12,12 0 0,1 2516,637" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="446" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 36 — Suite VIII"/>
+<text x="2135" y="464" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 36</text>
+<line x1="1960" y1="466" x2="1960" y2="506" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="466" x2="1965" y2="506" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="482" x2="2120" y2="482" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,474 A12,12 0 0,1 2120,490" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="482" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 37 — Suite VIII"/>
+<text x="2135" y="500" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 37</text>
+<line x1="1960" y1="502" x2="1960" y2="542" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="502" x2="1965" y2="542" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="518" x2="2120" y2="518" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,510 A12,12 0 0,1 2120,526" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="518" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 38 — Suite VIII"/>
+<text x="2135" y="536" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 38</text>
+<line x1="1960" y1="538" x2="1960" y2="578" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="538" x2="1965" y2="578" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="554" x2="2120" y2="554" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,546 A12,12 0 0,1 2120,562" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="554" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 39 — Suite VIII"/>
+<text x="2135" y="572" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 39</text>
+<line x1="1960" y1="574" x2="1960" y2="614" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="574" x2="1965" y2="614" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="590" x2="2120" y2="590" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,582 A12,12 0 0,1 2120,598" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="590" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 40 — Suite VIII"/>
+<text x="2135" y="608" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 40</text>
+<line x1="1960" y1="610" x2="1960" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="610" x2="1965" y2="650" stroke="#3a9090" stroke-width="4"/>
+<rect x="2356" y="629" width="364" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite IX — 5 chambres nobles, salon commun vue est"/>
+<text x="2538" y="708" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE IX</text>
+<text x="2538" y="732" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 41–45</text>
+<line x1="2720" y1="689" x2="2720" y2="729" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="689" x2="2715" y2="729" stroke="#3a9090" stroke-width="4"/>
+<line x1="2476" y1="812" x2="2516" y2="812" stroke="#c8a040" stroke-width="5"/>
+<path d="M2516,804 A12,12 0 0,1 2516,820" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="629" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 41 — Suite IX"/>
+<text x="2135" y="647" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 41</text>
+<line x1="1960" y1="649" x2="1960" y2="689" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="649" x2="1965" y2="689" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="665" x2="2120" y2="665" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,657 A12,12 0 0,1 2120,673" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="665" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 42 — Suite IX"/>
+<text x="2135" y="683" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 42</text>
+<line x1="1960" y1="685" x2="1960" y2="725" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="685" x2="1965" y2="725" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="701" x2="2120" y2="701" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,693 A12,12 0 0,1 2120,709" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="701" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 43 — Suite IX"/>
+<text x="2135" y="719" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 43</text>
+<line x1="1960" y1="721" x2="1960" y2="761" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="721" x2="1965" y2="761" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="737" x2="2120" y2="737" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,729 A12,12 0 0,1 2120,745" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="737" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 44 — Suite IX"/>
+<text x="2135" y="755" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 44</text>
+<line x1="1960" y1="757" x2="1960" y2="797" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="757" x2="1965" y2="797" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="773" x2="2120" y2="773" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,765 A12,12 0 0,1 2120,781" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="773" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 45 — Suite IX"/>
+<text x="2135" y="791" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 45</text>
+<line x1="1960" y1="793" x2="1960" y2="833" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="793" x2="1965" y2="833" stroke="#3a9090" stroke-width="4"/>
+<rect x="2356" y="812" width="364" height="183" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite X — 5 chambres nobles, salon commun avec balcon"/>
+<text x="2538" y="891" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE X</text>
+<text x="2538" y="915" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 46–50</text>
+<line x1="2720" y1="872" x2="2720" y2="912" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="872" x2="2715" y2="912" stroke="#3a9090" stroke-width="4"/>
+<line x1="2476" y1="995" x2="2516" y2="995" stroke="#c8a040" stroke-width="5"/>
+<path d="M2516,987 A12,12 0 0,1 2516,1003" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="812" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 46 — Suite X"/>
+<text x="2135" y="830" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 46</text>
+<line x1="1960" y1="832" x2="1960" y2="872" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="832" x2="1965" y2="872" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="848" x2="2120" y2="848" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,840 A12,12 0 0,1 2120,856" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="848" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 47 — Suite X"/>
+<text x="2135" y="866" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 47</text>
+<line x1="1960" y1="868" x2="1960" y2="908" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="868" x2="1965" y2="908" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="884" x2="2120" y2="884" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,876 A12,12 0 0,1 2120,892" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="884" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 48 — Suite X"/>
+<text x="2135" y="902" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 48</text>
+<line x1="1960" y1="904" x2="1960" y2="944" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="904" x2="1965" y2="944" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="920" x2="2120" y2="920" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,912 A12,12 0 0,1 2120,928" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="920" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 49 — Suite X"/>
+<text x="2135" y="938" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 49</text>
+<line x1="1960" y1="940" x2="1960" y2="980" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="940" x2="1965" y2="980" stroke="#3a9090" stroke-width="4"/>
+<line x1="2080" y1="956" x2="2120" y2="956" stroke="#c8a040" stroke-width="5"/>
+<path d="M2120,948 A12,12 0 0,1 2120,964" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="956" width="350" height="36" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 50 — Suite X"/>
+<text x="2135" y="974" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 50</text>
+<line x1="1960" y1="976" x2="1960" y2="1016" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="976" x2="1965" y2="1016" stroke="#3a9090" stroke-width="4"/>
+<rect x="1886" y="490" width="28" height="60" fill="#0c1828" stroke="#c8a040" stroke-width="2"/>
+<line x1="1900" y1="495" x2="1900" y2="545" stroke="#c8a040" stroke-width="6"/>
+<path d="M1892,545 A20,20 0 0,0 1912,545" stroke="#c8a040" stroke-width="2.5" fill="none"/>
+<text x="1930" y="525" font-family="Cinzel,serif" font-size="12" fill="#c8a040" transform="rotate(-90,1930,525)">COUR ←</text>
+<rect x="900" y="20" width="1000" height="1035" rx="3" fill="#030608" stroke="#1a2838" stroke-width="2" stroke-dasharray="14,8"/>
+<text x="1400" y="480" text-anchor="middle" font-family="Cinzel,serif" font-size="28" font-style="italic" fill="#1a2838">COUR INTÉRIEURE</text>
+<text x="1400" y="524" text-anchor="middle" font-family="Cinzel,serif" font-size="20" font-style="italic" fill="#132030">(ouverte au sud)</text>
+<rect x="20" y="1055" width="2760" height="405" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="34" y="1069" width="2732" height="377" fill="#07111e"/>
+<rect x="34" y="1069" width="2732" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="1400" y="1097" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — CORPS CENTRAL · 3e ÉT.</text>
+<rect x="34" y="1400" width="2732" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="1400" y="1428" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR SUD — CORPS CENTRAL · 3e ÉT.</text>
+<rect x="34" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="490" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="946" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1400" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1854" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2310" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2720" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="80" y="1115" width="200" height="285" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite XI — corps central ouest, salon vue sur cour"/>
+<text x="180" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE XI</text>
+<text x="180" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 51–55</text>
+<line x1="180" y1="1400" x2="220" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M220,1392 A12,12 0 0,1 220,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="284" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 51 — Suite XI"/>
+<text x="327" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.51</text>
+<line x1="307" y1="1400" x2="347" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M347,1392 A12,12 0 0,1 347,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="371" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 52 — Suite XI"/>
+<text x="414" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.52</text>
+<line x1="394" y1="1400" x2="434" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M434,1392 A12,12 0 0,1 434,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="458" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 53 — Suite XI"/>
+<text x="501" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.53</text>
+<line x1="481" y1="1400" x2="521" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M521,1392 A12,12 0 0,1 521,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="545" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 54 — Suite XI"/>
+<text x="588" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.54</text>
+<line x1="568" y1="1400" x2="608" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M608,1392 A12,12 0 0,1 608,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="632" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 55 — Suite XI"/>
+<text x="675" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.55</text>
+<line x1="655" y1="1400" x2="695" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M695,1392 A12,12 0 0,1 695,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="730" y="1115" width="200" height="285" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite XII — corps central centre-ouest, salon cheminée"/>
+<text x="830" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE XII</text>
+<text x="830" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 56–60</text>
+<line x1="830" y1="1400" x2="870" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M870,1392 A12,12 0 0,1 870,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="934" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 56 — Suite XII"/>
+<text x="977" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.56</text>
+<line x1="957" y1="1400" x2="997" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M997,1392 A12,12 0 0,1 997,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1021" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 57 — Suite XII"/>
+<text x="1064" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.57</text>
+<line x1="1044" y1="1400" x2="1084" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1084,1392 A12,12 0 0,1 1084,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1108" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 58 — Suite XII"/>
+<text x="1151" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.58</text>
+<line x1="1131" y1="1400" x2="1171" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1171,1392 A12,12 0 0,1 1171,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1195" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 59 — Suite XII"/>
+<text x="1238" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.59</text>
+<line x1="1218" y1="1400" x2="1258" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1258,1392 A12,12 0 0,1 1258,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1282" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 60 — Suite XII"/>
+<text x="1325" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.60</text>
+<line x1="1305" y1="1400" x2="1345" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1345,1392 A12,12 0 0,1 1345,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1380" y="1115" width="200" height="285" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite XIII — corps central centre-est, salon bibliothèque"/>
+<text x="1480" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE XIII</text>
+<text x="1480" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 61–65</text>
+<line x1="1480" y1="1400" x2="1520" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1520,1392 A12,12 0 0,1 1520,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1584" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 61 — Suite XIII"/>
+<text x="1627" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.61</text>
+<line x1="1607" y1="1400" x2="1647" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1647,1392 A12,12 0 0,1 1647,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1671" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 62 — Suite XIII"/>
+<text x="1714" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.62</text>
+<line x1="1694" y1="1400" x2="1734" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1734,1392 A12,12 0 0,1 1734,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1758" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 63 — Suite XIII"/>
+<text x="1801" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.63</text>
+<line x1="1781" y1="1400" x2="1821" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1821,1392 A12,12 0 0,1 1821,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1845" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 64 — Suite XIII"/>
+<text x="1888" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.64</text>
+<line x1="1868" y1="1400" x2="1908" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1908,1392 A12,12 0 0,1 1908,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1932" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 65 — Suite XIII"/>
+<text x="1975" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.65</text>
+<line x1="1955" y1="1400" x2="1995" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1995,1392 A12,12 0 0,1 1995,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2030" y="1115" width="200" height="285" fill="#0a1220" stroke="#2a4060" stroke-width="2" data-tip="Suite XIV — corps central est, salon vue jardins"/>
+<text x="2130" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SUITE XIV</text>
+<text x="2130" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Salon · Ch. 66–70</text>
+<line x1="2130" y1="1400" x2="2170" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2170,1392 A12,12 0 0,1 2170,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2234" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 66 — Suite XIV"/>
+<text x="2277" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.66</text>
+<line x1="2257" y1="1400" x2="2297" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2297,1392 A12,12 0 0,1 2297,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2321" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 67 — Suite XIV"/>
+<text x="2364" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.67</text>
+<line x1="2344" y1="1400" x2="2384" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2384,1392 A12,12 0 0,1 2384,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2408" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 68 — Suite XIV"/>
+<text x="2451" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.68</text>
+<line x1="2431" y1="1400" x2="2471" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2471,1392 A12,12 0 0,1 2471,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2495" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 69 — Suite XIV"/>
+<text x="2538" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.69</text>
+<line x1="2518" y1="1400" x2="2558" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2558,1392 A12,12 0 0,1 2558,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2582" y="1115" width="87" height="285" fill="#0c1828" stroke="#1a3050" stroke-width="2" data-tip="Chambre 70 — Suite XIV"/>
+<text x="2625" y="1257" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH.70</text>
+<line x1="2605" y1="1400" x2="2645" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2645,1392 A12,12 0 0,1 2645,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1380" y="1115" width="160" height="285" fill="#0c1828" stroke="#c8a040" stroke-width="2" data-tip="Escalier Central 3e étage — ↑ Observatoire Royal (Tour NO) · ↓ 2e étage"/>
+<text x="1460" y="1218" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#c8a040">ESCALIER</text>
+<text x="1460" y="1240" text-anchor="middle" font-family="Cinzel,serif" font-size="22" fill="#c8a040">↑↓</text>
+<text x="1460" y="1262" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#c8a040">↑ Observatoire</text>
+<text x="1460" y="1280" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#c8a040">↓ 2e Étage</text>
+<line x1="1384" y1="1130" x2="1536" y2="1130" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1384" y1="1148" x2="1536" y2="1148" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1384" y1="1166" x2="1536" y2="1166" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1384" y1="1184" x2="1536" y2="1184" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1384" y1="1202" x2="1536" y2="1202" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<rect x="1540" y="1115" width="80" height="285" fill="#060e1e" stroke="#c8a040" stroke-width="2" data-tip="Ascenseur — ↑↓"/>
+<text x="1580" y="1249" text-anchor="middle" font-family="Cinzel,serif" font-size="28">🛗</text>
+<text x="1580" y="1279" text-anchor="middle" font-family="Cinzel,serif" font-size="20" fill="#c8a040">↑↓</text>
+
+<g transform="translate(2700,34)">
+  <text x="16" y="18" text-anchor="middle" font-family="Cinzel,serif" font-size="22" font-weight="700" fill="#c8a040">N</text>
+  <line x1="16" y1="22" x2="16" y2="48" stroke="#c8a040" stroke-width="2.5"/>
+  <polygon points="16,20 10,40 16,35 22,40" fill="#c8a040"/>
+</g>
+<g id="TT" style="display:none;pointer-events:none;">
+  <rect id="TT-bg" rx="4" fill="#030c18" fill-opacity=".97" stroke="#c8a040" stroke-width="1.5"/>
+  <text id="TT-tx" font-family="Cinzel,serif" font-size="16" fill="#e8f0fa"/>
+</g>
+<script><![CDATA[
+(function(){const svg=document.querySelector('svg'),g=document.getElementById('TT'),bg=document.getElementById('TT-bg'),tx=document.getElementById('TT-tx'),P=12;
+function mv(e){const vb=svg.viewBox.baseVal,rc=svg.getBoundingClientRect();const mx=(e.clientX-rc.left)*vb.width/rc.width;const my=(e.clientY-rc.top)*vb.height/rc.height;const bb=tx.getBBox();bg.setAttribute('x',bb.x-P);bg.setAttribute('y',bb.y-P);bg.setAttribute('width',bb.width+P*2);bg.setAttribute('height',bb.height+P*2);g.setAttribute('transform','translate('+(mx+16)+','+(my-12)+')');}
+document.querySelectorAll('[data-tip]').forEach(el=>{el.style.cursor='pointer';el.addEventListener('mouseenter',e=>{tx.textContent=el.dataset.tip;g.style.display='block';mv(e);});el.addEventListener('mousemove',mv);el.addEventListener('mouseleave',()=>g.style.display='none');});})();
+]]></script>
+</svg>
+</div>
+<footer class="legend">
+  <div class="li"><svg width="36" height="18"><line x1="2" y1="9" x2="22" y2="9" stroke="#c8a040" stroke-width="5"/><path d="M22,2 A11,11 0 0,1 22,16" stroke="#c8a040" stroke-width="2" fill="none"/></svg><span class="ll">Porte</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="36" height="18"><line x1="2" y1="6" x2="34" y2="6" stroke="#3a9090" stroke-width="3.5"/><line x1="2" y1="12" x2="34" y2="12" stroke="#3a9090" stroke-width="3.5"/></svg><span class="ll">Fenêtre</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="44" height="18"><line x1="2" y1="6" x2="42" y2="6" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><line x1="2" y1="10" x2="42" y2="10" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><line x1="2" y1="14" x2="42" y2="14" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><polygon points="14,0 8,9 20,9" fill="#c8a040"/><polygon points="30,18 24,9 36,9" fill="#c8a040"/></svg><span class="ll">Escalier ↑↓</span></div>
+  <div class="sep"></div>
+  <div class="li"><span style="font-size:1.4rem;line-height:1">🛗</span><span class="ll">Ascenseur</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="22" height="22"><circle cx="11" cy="11" r="10" fill="#050e1c" stroke="#3a6090" stroke-width="2"/><circle cx="11" cy="11" r="5" fill="#030810" stroke="#3a6090" stroke-width="1.5"/></svg><span class="ll">Tour</span></div>
+  <div class="sep"></div>
+  <div class="li"><span class="ll" style="color:#1a3040;font-style:italic;">3e Étage — 14 Suites · 70 Chambres · Observatoire · Clocher · Guet · Bannières</span></div>
+</footer>
+</body>
+</html>

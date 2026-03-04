@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Château — 2e Étage — Royale</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;background:#07101a;overflow:hidden;display:flex;flex-direction:column;}
+.nav{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 12px;background:linear-gradient(180deg,#0c1828,#07101a);border-bottom:1px solid #1a3050;flex-wrap:wrap;}
+.nav-title{font-family:'Cinzel',serif;font-size:1rem;color:#c8a040;letter-spacing:.12em;margin-right:14px;white-space:nowrap;text-shadow:0 0 16px rgba(200,160,64,.3);}
+.tab{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.06em;padding:6px 14px;border:1px solid #2a4060;background:#0a1828;color:#7090b0;cursor:pointer;transition:all .2s;border-radius:2px;white-space:nowrap;text-decoration:none;display:inline-block;}
+.tab:hover{background:#142038;color:#e0c060;border-color:#c8a040;}
+.tab.active{background:linear-gradient(135deg,#1a3a6a,#0e2448);color:#e0c060;border-color:#c8a040;box-shadow:0 0 10px rgba(200,160,64,.2);}
+.plan{flex:1 1 0;min-height:0;display:flex;}
+.plan svg{width:100%;height:100%;display:block;}
+.legend{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:20px;padding:6px 16px;background:#050d18;border-top:1px solid #1a3050;flex-wrap:wrap;}
+.li{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.ll{font-family:'Cinzel',serif;font-size:.8rem;color:#6080a0;letter-spacing:.04em;}
+.sep{width:1px;height:22px;background:#1a3050;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="nav-title">⚜ Château des Hautes Lumières</span>
+  <a class="tab" href="etage_1_SS.html">⛓ Sous-Sol</a>
+  <a class="tab" href="etage_2_RDC.html">Rez-de-Chaussée</a>
+  <a class="tab" href="etage_3_E1.html">1er Étage</a>
+  <a class="tab active" href="etage_4_E2.html">2e Étage — Royale</a>
+  <a class="tab" href="etage_5_E3.html">3e Étage — Invités</a>
+</nav>
+<div class="plan">
+<svg viewBox="0 0 2800 1480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="stone" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#0a141e"/>
+    <rect x="0" y="0" width="12" height="12" fill="#0c1820" opacity=".5"/>
+    <rect x="12" y="12" width="12" height="12" fill="#070f19" opacity=".5"/>
+  </pattern>
+</defs>
+<rect width="2800" height="1480" fill="#030810"/>
+<rect x="20" y="20" width="880" height="1035" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="34" y="34" width="852" height="1007" fill="#07111e"/>
+<circle cx="78" cy="78" r="48" fill="#1a1030" stroke="#5a2a8a" stroke-width="2"/>
+<circle cx="78" cy="78" r="34" fill="#100820" stroke="#7a3ab0" stroke-width="2" data-tip="Tour NO — Armurerie du Roi (déplacée depuis 2e étage) · armes sacrées, épée couronnement"/>
+<text x="78" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#9040c0">T.NO</text>
+<text x="78" y="89" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#7030a0">Arm. Roi</text>
+<circle cx="78" cy="977" r="48" fill="#101828" stroke="#1a2a50" stroke-width="2"/>
+<circle cx="78" cy="977" r="34" fill="#0c101e" stroke="#2a3a60" stroke-width="2" data-tip="Tour SO — Boudoir de la Reine · salon privé exclusif, vue sur jardins"/>
+<text x="78" y="971" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#3050a0">T.SO</text>
+<text x="78" y="988" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#2040a0">Boudoir Reine</text>
+<rect x="34" y="34" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="460" y="62" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — AILE OUEST · 2e ÉT.</text>
+<rect x="34" y="510" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="460" y="538" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR ROYAL — AILE OUEST · 2e ÉT.</text>
+<rect x="34" y="995" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="34" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="840" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="420" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="80" y="80" width="760" height="430" fill="#0c1828" stroke="#c8a040" stroke-width="2" data-tip="Chambre Royale du Roi — vue sur la Capitale (nord), lit à baldaquin, tentures bleues royales"/>
+<text x="460" y="283" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CHAMBRE ROYALE — ROI</text>
+<text x="460" y="307" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Fenêtres nord · vue sur la Capitale · lit à baldaquin</text>
+<line x1="120" y1="80" x2="160" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="120" y1="85" x2="160" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="230" y1="80" x2="270" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="230" y1="85" x2="270" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="340" y1="80" x2="380" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="340" y1="85" x2="380" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="450" y1="80" x2="490" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="450" y1="85" x2="490" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="560" y1="80" x2="600" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="560" y1="85" x2="600" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="680" y1="80" x2="720" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="680" y1="85" x2="720" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="80" y1="200" x2="80" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="200" x2="85" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="80" y1="320" x2="80" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="320" x2="85" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="840" y1="200" x2="840" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="200" x2="835" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="840" y1="320" x2="840" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="320" x2="835" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="380" y1="510" x2="420" y2="510" stroke="#c8a040" stroke-width="5"/>
+<path d="M420,502 A12,12 0 0,1 420,518" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="80" y="556" width="340" height="219" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Salon Privé du Roi — bibliothèque personnelle, cabinet correspondance, fauteuils cuir"/>
+<text x="250" y="653" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SALON PRIVÉ</text>
+<text x="250" y="677" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">du Roi · bibliothèque · correspondance</text>
+<line x1="80" y1="610" x2="80" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="610" x2="85" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="80" y1="680" x2="80" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="680" x2="85" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="220" y1="775" x2="260" y2="775" stroke="#c8a040" stroke-width="5"/>
+<path d="M260,767 A12,12 0 0,1 260,783" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="420" y="556" width="420" height="219" fill="#080e18" stroke="#2060a0" stroke-width="2" data-tip="Salle de Bain du Roi — baignoire marbre blanc, eau chaude, miroirs, dressing"/>
+<text x="630" y="653" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SALLE DE BAIN</text>
+<text x="630" y="677" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">du Roi · marbre blanc</text>
+<line x1="840" y1="610" x2="840" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="610" x2="835" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="840" y1="680" x2="840" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="835" y1="680" x2="835" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="600" y1="775" x2="640" y2="775" stroke="#c8a040" stroke-width="5"/>
+<path d="M640,767 A12,12 0 0,1 640,783" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="380" y1="556" x2="380" y2="596" stroke="#c8a040" stroke-width="5"/>
+<path d="M372,596 A12,12 0 0,1 388,596" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="80" y="775" width="760" height="40" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="460" y="799" text-anchor="middle" font-family="Cinzel,serif" font-size="14" fill="#ffffff">COULOIR PRIVÉ — ROI</text>
+<line x1="180" y1="815" x2="220" y2="815" stroke="#c8a040" stroke-width="5"/>
+<path d="M220,807 A12,12 0 0,1 220,823" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="580" y1="815" x2="620" y2="815" stroke="#c8a040" stroke-width="5"/>
+<path d="M620,807 A12,12 0 0,1 620,823" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="80" y="815" width="340" height="100" fill="#0a1420" stroke="#3a4a70" stroke-width="2" data-tip="Gardes du Corps du Roi — accès via couloir privé · pas de porte directe sur couloir principal"/>
+<text x="250" y="853" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">GARDES DU CORPS</text>
+<text x="250" y="877" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">du Roi</text>
+<rect x="420" y="815" width="420" height="100" fill="#0a1420" stroke="#3a4a70" stroke-width="2" data-tip="Domestiques du Roi — accès via couloir privé · pas de porte directe sur couloir principal"/>
+<text x="630" y="853" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">DOMESTIQUES</text>
+<text x="630" y="877" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">du Roi</text>
+<rect x="80" y="915" width="760" height="80" fill="#08101c" stroke="#c8a040" stroke-width="2" data-tip="Mini-Armurerie Gardes du Roi — accès depuis gardes ET depuis couloir principal"/>
+<text x="460" y="943" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">MINI-ARMURERIE</text>
+<text x="460" y="967" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Gardes du Roi</text>
+<line x1="220" y1="915" x2="260" y2="915" stroke="#c8a040" stroke-width="5"/>
+<path d="M260,907 A12,12 0 0,1 260,923" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="420" y1="995" x2="460" y2="995" stroke="#c8a040" stroke-width="5"/>
+<path d="M460,987 A12,12 0 0,1 460,1003" stroke="#c8a040" stroke-width="2" fill="none"/>
+<!-- Salle Runique Roi — appendice côté cour -->
+<rect x="886" y="80" width="174" height="220" fill="#e8ecf8" stroke="#8898c8" stroke-width="3" data-tip="Salle Runique du Roi — magie ancienne, rituels royaux, accès exclusif depuis la chambre"/>
+<text x="973" y="178" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#4a5898">SALLE</text>
+<text x="973" y="198" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#4a5898">RUNIQUE</text>
+<text x="973" y="215" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#5060a8">du Roi</text>
+<text x="973" y="244" text-anchor="middle" font-family="Cinzel,serif" font-size="18" fill="#8898c8" opacity=".6">ᚠ ᚱ ᛗ ᚲ</text>
+<line x1="840" y1="150" x2="886" y2="150" stroke="#8898c8" stroke-width="5"/>
+<path d="M878,142 A12,12 0 0,1 878,158" stroke="#8898c8" stroke-width="2" fill="none"/>
+<rect x="1900" y="20" width="880" height="1035" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="1914" y="34" width="852" height="1007" fill="#07111e"/>
+<circle cx="2722" cy="78" r="48" fill="#1a1030" stroke="#5a2a8a" stroke-width="2"/>
+<circle cx="2722" cy="78" r="34" fill="#100820" stroke="#7a3ab0" stroke-width="2" data-tip="Tour NE — Armurerie de la Reine · armes personnelles, dagues, épée cérémonie"/>
+<text x="2722" y="72" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#9040c0">T.NE</text>
+<text x="2722" y="89" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#7030a0">Arm. Reine</text>
+<circle cx="2722" cy="977" r="48" fill="#1a1208" stroke="#5a3010" stroke-width="2"/>
+<circle cx="2722" cy="977" r="34" fill="#100e06" stroke="#7a4020" stroke-width="2" data-tip="Tour SE — Cabinet du Roi · bureau privé, décisions secrètes, sceau royal"/>
+<text x="2722" y="971" text-anchor="middle" font-family="Cinzel,serif" font-size="15" fill="#b07040">T.SE</text>
+<text x="2722" y="988" text-anchor="middle" font-family="Cinzel,serif" font-size="12" fill="#906030">Cabinet Roi</text>
+<rect x="1914" y="34" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="2340" y="62" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — AILE EST · 2e ÉT.</text>
+<rect x="1914" y="510" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="2340" y="538" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR ROYAL — AILE EST · 2e ÉT.</text>
+<rect x="1914" y="995" width="852" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1914" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2720" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2300" y="34" width="46" height="1007" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1960" y="80" width="760" height="430" fill="#0c1828" stroke="#c8a040" stroke-width="2" data-tip="Chambre Royale de la Reine — vue sur les Jardins, lit royal, tentures violettes"/>
+<text x="2340" y="283" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CHAMBRE ROYALE — REINE</text>
+<text x="2340" y="307" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Fenêtres nord/est · vue sur les Jardins</text>
+<line x1="1980" y1="80" x2="2020" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="1980" y1="85" x2="2020" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="2090" y1="80" x2="2130" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="2090" y1="85" x2="2130" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="2200" y1="80" x2="2240" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="2200" y1="85" x2="2240" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="2310" y1="80" x2="2350" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="2310" y1="85" x2="2350" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="2420" y1="80" x2="2460" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="2420" y1="85" x2="2460" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="2540" y1="80" x2="2580" y2="80" stroke="#3a9090" stroke-width="4"/>
+<line x1="2540" y1="85" x2="2580" y2="85" stroke="#3a9090" stroke-width="4"/>
+<line x1="1960" y1="200" x2="1960" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="200" x2="1965" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="1960" y1="320" x2="1960" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="320" x2="1965" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="2720" y1="200" x2="2720" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="200" x2="2715" y2="240" stroke="#3a9090" stroke-width="4"/>
+<line x1="2720" y1="320" x2="2720" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="320" x2="2715" y2="360" stroke="#3a9090" stroke-width="4"/>
+<line x1="2240" y1="510" x2="2280" y2="510" stroke="#c8a040" stroke-width="5"/>
+<path d="M2280,502 A12,12 0 0,1 2280,518" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="556" width="420" height="219" fill="#0c1828" stroke="#5030a0" stroke-width="2" data-tip="Salon Privé de la Reine — boudoir secondaire, correspondance, dames de compagnie"/>
+<text x="2170" y="653" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SALON PRIVÉ</text>
+<text x="2170" y="677" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">de la Reine · correspondance · dames</text>
+<line x1="1960" y1="610" x2="1960" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="610" x2="1965" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="1960" y1="680" x2="1960" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="1965" y1="680" x2="1965" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="2100" y1="775" x2="2140" y2="775" stroke="#c8a040" stroke-width="5"/>
+<path d="M2140,767 A12,12 0 0,1 2140,783" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2380" y="556" width="340" height="219" fill="#080e18" stroke="#6040a0" stroke-width="2" data-tip="Salle de Bain de la Reine — bain marbre rose, eau de rose, tentures soie"/>
+<text x="2550" y="653" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">SALLE DE BAIN</text>
+<text x="2550" y="677" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">de la Reine · marbre rose</text>
+<line x1="2720" y1="610" x2="2720" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="610" x2="2715" y2="650" stroke="#3a9090" stroke-width="4"/>
+<line x1="2720" y1="680" x2="2720" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="2715" y1="680" x2="2715" y2="720" stroke="#3a9090" stroke-width="4"/>
+<line x1="2520" y1="775" x2="2560" y2="775" stroke="#c8a040" stroke-width="5"/>
+<path d="M2560,767 A12,12 0 0,1 2560,783" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="2340" y1="556" x2="2340" y2="596" stroke="#c8a040" stroke-width="5"/>
+<path d="M2332,596 A12,12 0 0,1 2348,596" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="775" width="760" height="40" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="2340" y="799" text-anchor="middle" font-family="Cinzel,serif" font-size="14" fill="#ffffff">COULOIR PRIVÉ — REINE</text>
+<line x1="2060" y1="815" x2="2100" y2="815" stroke="#c8a040" stroke-width="5"/>
+<path d="M2100,807 A12,12 0 0,1 2100,823" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="2460" y1="815" x2="2500" y2="815" stroke="#c8a040" stroke-width="5"/>
+<path d="M2500,807 A12,12 0 0,1 2500,823" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1960" y="815" width="380" height="100" fill="#0a1420" stroke="#3a4a70" stroke-width="2" data-tip="Gardes et Domestiques de la Reine — accès via couloir privé · pas de porte directe couloir principal"/>
+<text x="2150" y="853" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">GARDES &amp; DOMESTIQUES</text>
+<text x="2150" y="877" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">de la Reine</text>
+<rect x="2340" y="815" width="380" height="100" fill="#0a1420" stroke="#3a4a70" stroke-width="2" data-tip="Domestiques de la Reine — accès via couloir privé uniquement"/>
+<text x="2530" y="853" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">DOMESTIQUES</text>
+<text x="2530" y="877" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">de la Reine</text>
+<rect x="1960" y="915" width="760" height="80" fill="#08101c" stroke="#c8a040" stroke-width="2" data-tip="Mini-Armurerie Gardes de la Reine — accès depuis gardes ET depuis couloir principal"/>
+<text x="2340" y="943" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">MINI-ARMURERIE</text>
+<text x="2340" y="967" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Gardes de la Reine</text>
+<line x1="2100" y1="915" x2="2140" y2="915" stroke="#c8a040" stroke-width="5"/>
+<path d="M2140,907 A12,12 0 0,1 2140,923" stroke="#c8a040" stroke-width="2" fill="none"/>
+<line x1="2300" y1="995" x2="2340" y2="995" stroke="#c8a040" stroke-width="5"/>
+<path d="M2340,987 A12,12 0 0,1 2340,1003" stroke="#c8a040" stroke-width="2" fill="none"/>
+<!-- Salle Runique Reine — appendice côté cour -->
+<rect x="1740" y="80" width="174" height="220" fill="#e8ecf8" stroke="#8898c8" stroke-width="3" data-tip="Salle Runique de la Reine — magie ancienne, rituels royaux, accès exclusif depuis la chambre"/>
+<text x="1827" y="178" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#4a5898">SALLE</text>
+<text x="1827" y="198" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-weight="600" fill="#4a5898">RUNIQUE</text>
+<text x="1827" y="215" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#5060a8">de la Reine</text>
+<text x="1827" y="244" text-anchor="middle" font-family="Cinzel,serif" font-size="18" fill="#8898c8" opacity=".6">ᚱ ᛗ ᚲ ᚾ</text>
+<line x1="1914" y1="150" x2="1960" y2="150" stroke="#8898c8" stroke-width="5"/>
+<path d="M1922,142 A12,12 0 0,1 1922,158" stroke="#8898c8" stroke-width="2" fill="none"/>
+<rect x="900" y="20" width="1000" height="1035" rx="3" fill="#030608" stroke="#1a2838" stroke-width="2" stroke-dasharray="14,8"/>
+<text x="1400" y="480" text-anchor="middle" font-family="Cinzel,serif" font-size="28" font-style="italic" fill="#1a2838">COUR INTÉRIEURE</text>
+<text x="1400" y="524" text-anchor="middle" font-family="Cinzel,serif" font-size="20" font-style="italic" fill="#132030">(ouverte au sud)</text>
+<text x="973" y="370" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#3a4870">◄ Pièce Runique</text>
+<text x="1827" y="370" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-style="italic" fill="#3a4870">Pièce Runique ►</text>
+<rect x="20" y="1055" width="2760" height="405" rx="3" fill="url(#stone)" stroke="#2a4060" stroke-width="3"/>
+<rect x="34" y="1069" width="2732" height="377" fill="#07111e"/>
+<rect x="34" y="1069" width="2732" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="1400" y="1097" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR NORD — CORPS CENTRAL · 2e ÉT.</text>
+<rect x="34" y="1400" width="2732" height="46" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<text x="1400" y="1428" text-anchor="middle" font-family="Cinzel,serif" font-size="18" font-weight="600" fill="#ffffff">COULOIR SUD — CORPS CENTRAL · 2e ÉT.</text>
+<rect x="34" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="490" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="946" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1400" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="1854" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2310" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="2720" y="1069" width="46" height="377" fill="#0c1828" stroke="#2a4060" stroke-width="1"/>
+<rect x="80" y="1115" width="410" height="285" fill="#0c1018" stroke="#c8a040" stroke-width="2" data-tip="Trésorerie Royale — coffres-forts, joyaux de la Couronne, lingots d'or · 2 gardes permanents"/>
+<text x="285" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">TRÉSORERIE</text>
+<text x="285" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">ROYALE</text>
+<line x1="80" y1="1190" x2="80" y2="1230" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="1190" x2="85" y2="1230" stroke="#3a9090" stroke-width="4"/>
+<line x1="80" y1="1230" x2="80" y2="1270" stroke="#3a9090" stroke-width="4"/>
+<line x1="85" y1="1230" x2="85" y2="1270" stroke="#3a9090" stroke-width="4"/>
+<line x1="247" y1="1400" x2="287" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M287,1392 A12,12 0 0,1 287,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="536" y="1115" width="410" height="285" fill="#e8ecf8" stroke="#8898c8" stroke-width="3" data-tip="Grande Salle Runique — rituels de la famille royale, magie ancienne, accès réservé"/>
+<text x="741" y="1228" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#4a5898">GRANDE SALLE RUNIQUE</text>
+<text x="741" y="1252" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#5060a8">Famille Royale · accès restreint</text>
+<text x="741" y="1288" text-anchor="middle" font-family="Cinzel,serif" font-size="20" fill="#8898c8" opacity=".6">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ</text>
+<line x1="701" y1="1400" x2="741" y2="1400" stroke="#8898c8" stroke-width="5"/>
+<path d="M741,1392 A12,12 0 0,1 741,1408" stroke="#8898c8" stroke-width="2" fill="none"/>
+<rect x="992" y="1115" width="408" height="285" fill="#080e18" stroke="#2070a0" stroke-width="2" data-tip="Verrière — jardin d'hiver, plantes exotiques, orangerie royale"/>
+<text x="1196" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">VERRIÈRE</text>
+<text x="1196" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Orangerie · plantes exotiques · lumière</text>
+<line x1="1060" y1="1115" x2="1100" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="1060" y1="1120" x2="1100" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="1160" y1="1115" x2="1200" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="1160" y1="1120" x2="1200" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="1260" y1="1115" x2="1300" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="1260" y1="1120" x2="1300" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="1360" y1="1115" x2="1400" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="1360" y1="1120" x2="1400" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="1153" y1="1400" x2="1193" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1193,1392 A12,12 0 0,1 1193,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<!-- Accès Cour — 2e étage : seulement ici -->
+<line x1="1380" y1="1055" x2="1460" y2="1055" stroke="#c8a040" stroke-width="7"/>
+<path d="M1460,1042 A18,18 0 0,1 1460,1068" stroke="#c8a040" stroke-width="3" fill="none"/>
+<text x="1420" y="1048" text-anchor="middle" font-family="Cinzel,serif" font-size="11" fill="#c8a040">↑ Cour</text>
+<rect x="1446" y="1115" width="320" height="285" fill="#0c1828" stroke="#c8a040" stroke-width="2" data-tip="Escalier ESCALIER CENTRAL — ↑↓"/>
+<text x="1606" y="1247" text-anchor="middle" font-family="Cinzel,serif" font-size="16" font-weight="600" fill="#c8a040">ESCALIER CENTRAL</text>
+<text x="1606" y="1275" text-anchor="middle" font-family="Cinzel,serif" font-size="22" fill="#c8a040">↑↓</text>
+<line x1="1450" y1="1133" x2="1762" y2="1133" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1450" y1="1151" x2="1762" y2="1151" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1450" y1="1169" x2="1762" y2="1169" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1450" y1="1187" x2="1762" y2="1187" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<line x1="1450" y1="1205" x2="1762" y2="1205" stroke="#c8a040" stroke-width="1.5" opacity=".5"/>
+<rect x="1766" y="1115" width="88" height="285" fill="#060e1e" stroke="#c8a040" stroke-width="2" data-tip="Ascenseur — ↑↓"/>
+<text x="1810" y="1249" text-anchor="middle" font-family="Cinzel,serif" font-size="28">🛗</text>
+<text x="1810" y="1279" text-anchor="middle" font-family="Cinzel,serif" font-size="20" fill="#c8a040">↑↓</text>
+<rect x="1854" y="1115" width="152" height="140" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 1 — Prince/Princesse · lit baldaquin"/>
+<text x="1930" y="1173" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 1</text>
+<text x="1930" y="1197" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="1910" y1="1255" x2="1950" y2="1255" stroke="#c8a040" stroke-width="5"/>
+<path d="M1950,1247 A12,12 0 0,1 1950,1263" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2008" y="1115" width="152" height="140" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 2 — Prince/Princesse · lit baldaquin"/>
+<text x="2084" y="1173" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 2</text>
+<text x="2084" y="1197" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="2064" y1="1255" x2="2104" y2="1255" stroke="#c8a040" stroke-width="5"/>
+<path d="M2104,1247 A12,12 0 0,1 2104,1263" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2162" y="1115" width="152" height="140" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 3 — Prince/Princesse · lit baldaquin"/>
+<text x="2238" y="1173" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 3</text>
+<text x="2238" y="1197" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="2218" y1="1255" x2="2258" y2="1255" stroke="#c8a040" stroke-width="5"/>
+<path d="M2258,1247 A12,12 0 0,1 2258,1263" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="1854" y="1255" width="152" height="145" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 4 — Prince/Princesse · lit baldaquin"/>
+<text x="1930" y="1315" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 4</text>
+<text x="1930" y="1339" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="1910" y1="1400" x2="1950" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M1950,1392 A12,12 0 0,1 1950,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2008" y="1255" width="152" height="145" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 5 — Prince/Princesse · lit baldaquin"/>
+<text x="2084" y="1315" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 5</text>
+<text x="2084" y="1339" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="2064" y1="1400" x2="2104" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2104,1392 A12,12 0 0,1 2104,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2162" y="1255" width="152" height="145" fill="#0c1828" stroke="#2a4060" stroke-width="2" data-tip="Chambre 6 — Prince/Princesse · lit baldaquin"/>
+<text x="2238" y="1315" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">CH. 6</text>
+<text x="2238" y="1339" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Prince·sse</text>
+<line x1="2218" y1="1400" x2="2258" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2258,1392 A12,12 0 0,1 2258,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+<rect x="2356" y="1115" width="364" height="285" fill="#07101a" stroke="#2a4050" stroke-width="2" data-tip="Galerie Royale — balustrades dorées, vue sur la Grande Cour et les jardins"/>
+<text x="2538" y="1245" text-anchor="middle" font-family="Cinzel,serif" font-size="17" font-weight="600" fill="#ffffff">GALERIE ROYALE</text>
+<text x="2538" y="1269" text-anchor="middle" font-family="Cinzel,serif" font-size="14" font-style="italic" fill="#aabbcc">Vue sur la Cour · balustrades dorées</text>
+<line x1="2400" y1="1115" x2="2440" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="2400" y1="1120" x2="2440" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="2500" y1="1115" x2="2540" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="2500" y1="1120" x2="2540" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="2600" y1="1115" x2="2640" y2="1115" stroke="#3a9090" stroke-width="4"/>
+<line x1="2600" y1="1120" x2="2640" y2="1120" stroke="#3a9090" stroke-width="4"/>
+<line x1="2509" y1="1400" x2="2549" y2="1400" stroke="#c8a040" stroke-width="5"/>
+<path d="M2549,1392 A12,12 0 0,1 2549,1408" stroke="#c8a040" stroke-width="2" fill="none"/>
+
+<g transform="translate(2700,34)">
+  <text x="16" y="18" text-anchor="middle" font-family="Cinzel,serif" font-size="22" font-weight="700" fill="#c8a040">N</text>
+  <line x1="16" y1="22" x2="16" y2="48" stroke="#c8a040" stroke-width="2.5"/>
+  <polygon points="16,20 10,40 16,35 22,40" fill="#c8a040"/>
+</g>
+<g id="TT" style="display:none;pointer-events:none;">
+  <rect id="TT-bg" rx="4" fill="#030c18" fill-opacity=".97" stroke="#c8a040" stroke-width="1.5"/>
+  <text id="TT-tx" font-family="Cinzel,serif" font-size="16" fill="#e8f0fa"/>
+</g>
+<script><![CDATA[
+(function(){const svg=document.querySelector('svg'),g=document.getElementById('TT'),bg=document.getElementById('TT-bg'),tx=document.getElementById('TT-tx'),P=12;
+function mv(e){const vb=svg.viewBox.baseVal,rc=svg.getBoundingClientRect();const mx=(e.clientX-rc.left)*vb.width/rc.width;const my=(e.clientY-rc.top)*vb.height/rc.height;const bb=tx.getBBox();bg.setAttribute('x',bb.x-P);bg.setAttribute('y',bb.y-P);bg.setAttribute('width',bb.width+P*2);bg.setAttribute('height',bb.height+P*2);g.setAttribute('transform','translate('+(mx+16)+','+(my-12)+')');}
+document.querySelectorAll('[data-tip]').forEach(el=>{el.style.cursor='pointer';el.addEventListener('mouseenter',e=>{tx.textContent=el.dataset.tip;g.style.display='block';mv(e);});el.addEventListener('mousemove',mv);el.addEventListener('mouseleave',()=>g.style.display='none');});})();
+]]></script>
+</svg>
+</div>
+<footer class="legend">
+  <div class="li"><svg width="36" height="18"><line x1="2" y1="9" x2="22" y2="9" stroke="#c8a040" stroke-width="5"/><path d="M22,2 A11,11 0 0,1 22,16" stroke="#c8a040" stroke-width="2" fill="none"/></svg><span class="ll">Porte</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="36" height="18"><line x1="2" y1="6" x2="34" y2="6" stroke="#3a9090" stroke-width="3.5"/><line x1="2" y1="12" x2="34" y2="12" stroke="#3a9090" stroke-width="3.5"/></svg><span class="ll">Fenêtre</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="44" height="18"><line x1="2" y1="6" x2="42" y2="6" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><line x1="2" y1="10" x2="42" y2="10" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><line x1="2" y1="14" x2="42" y2="14" stroke="#c8a040" stroke-width="1.5" opacity=".6"/><polygon points="14,0 8,9 20,9" fill="#c8a040"/><polygon points="30,18 24,9 36,9" fill="#c8a040"/></svg><span class="ll">Escalier ↑↓</span></div>
+  <div class="sep"></div>
+  <div class="li"><span style="font-size:1.4rem;line-height:1">🛗</span><span class="ll">Ascenseur</span></div>
+  <div class="sep"></div>
+  <div class="li"><svg width="22" height="22"><circle cx="11" cy="11" r="10" fill="#050e1c" stroke="#3a6090" stroke-width="2"/><circle cx="11" cy="11" r="5" fill="#030810" stroke="#3a6090" stroke-width="1.5"/></svg><span class="ll">Tour</span></div>
+  <div class="sep"></div>
+  <div class="li"><span class="ll" style="color:#1a3040;font-style:italic;">2e Étage — Chambres Royales · Salles Runiques · Trésorerie · Couloirs Privés · 6 Chambres Princes</span></div>
+</footer>
+</body>
+</html>
